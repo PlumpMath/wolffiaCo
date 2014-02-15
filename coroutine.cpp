@@ -22,3 +22,7 @@ bool lockAcquire(unsigned short id) {
 void lockRelease(unsigned short id) {
     __coroutine_locks &= ~id;
 }
+
+bool lockTest(unsigned short id) {
+    return (__coroutine_locks & id) == id;
+}

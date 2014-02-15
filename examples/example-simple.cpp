@@ -2,11 +2,11 @@
 //  example-simple.cpp
 //  coroutine
 //
-//  Created by Parker Kane on 15/02/2014.
-//  Copyright (c) 2014 Parker Kane. All rights reserved.
+//  Created by Timo Reunanen on 15/02/2014.
+//  Copyright (c) 2014 Timo Reunanen. All rights reserved.
 //
 
-#include <coroutine.h>
+#include "coroutine.h"
 
 CORO_Begin(func1)
 CORO_Method(void)

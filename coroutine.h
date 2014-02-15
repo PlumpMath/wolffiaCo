@@ -11,21 +11,6 @@
 
 #include <stddef.h>
 
-extern unsigned short __coroutine_locks;
-
-class coroutine {
-public:
-    void * __coState;
-    
-    coroutine() : __coState(NULL) {
-    }
-    
-    void resetState() {
-        __coState = NULL;
-    }
-private:
-};
-
 #define __coConcat(a,b) __coConcat2(a,b)
 #define __coConcat2(a,b) a##b
 
@@ -38,16 +23,15 @@ private:
 
 #define __coClassName(name) __coConcat(__co_class_, name)
 
-#define CORO_Start __coResumePosition; __coSavePosition(); __coLabelPosition();
-#define CORO_StartStatic static void * __coState = NULL; CORO_Start;
+#define CORO_Start static void * __coState = NULL; __coResumePosition; __coSavePosition(); __coLabelPosition();
 
 #define CORO_Finish __coResetPosition();
 
-#define CORO_Begin(name) class __coClassName(name) : coroutine { public:
+#define CORO_Begin(name) class __coClassName(name) { public:
 #define CORO_Method(ret, args...) ret operator()(args) { CORO_Start;
 #define CORO_End(name, copies...) CORO_Finish; } }; __coClassName(name) name, ##copies;
 
-#define CORO_BeginClass(className) class className : coroutine { public:
+#define CORO_BeginClass(className) class className { public:
 #define CORO_EndClass() CORO_Finish; } };
 
 #define finish(val) do { __coResetPosition(); return val; } while(0)
@@ -78,8 +62,9 @@ private:
 
 bool lockAcquire(unsigned short id);
 void lockRelease(unsigned short id);
+bool lockTest(unsigned short id);
 
 #define lockWaitAndAcquire(id, ret...) yieldUntil(lockAcquire(id), ##ret)
-#define lockWait(id, ret...) yieldWhile(((__coroutine_locks & id) == id), ##ret)
+#define lockWait(id, ret...) yieldWhile(lockTest(id), ##ret)
 
 #endif

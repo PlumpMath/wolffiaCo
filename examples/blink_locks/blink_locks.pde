@@ -15,7 +15,7 @@ int led = 13;
 #define offLock LOCK_2
 
 void blink() {
-  CORO_StartStatic
+  CORO_Start
 
   static long time = 0;
 
@@ -33,7 +33,7 @@ void blink() {
 }
 
 void blinkOn() {
-  CORO_StartStatic
+  CORO_Start
   
   while(true) {
     lockWaitAndAcquire(onLock);
@@ -45,7 +45,7 @@ void blinkOn() {
 }
 
 void blinkOff() {
-  CORO_StartStatic
+  CORO_Start
   
   while(true) {
     lockWaitAndAcquire(offLock);

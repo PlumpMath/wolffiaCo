@@ -13,7 +13,7 @@ int led = 13;
 
 
 void blink() {
-  CORO_StartStatic
+  CORO_Start
 
   static long time = 0;
 

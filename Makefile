@@ -1,21 +1,25 @@
 all: example
 
-example: tests/example.cpp coroutine.h Makefile
-	g++ -O3 -std=c++11 -I. -o example tests/example.cpp
+example: examples/example.cpp coroutine.h Makefile
+	g++ -O3 -std=c++11 -I. -o example examples/example.cpp
 
 ## just for checking size
 avr:
-	avr-g++ -O3 -std=c++11 -I. -o example.avr tests/example.cpp
-	avr-size --mcu=attiny85 -C example.avr
+	avr-g++ -O3 -std=c++11 -I. -o example.avr examples/example.cpp
 
-	avr-g++ -O3 -std=c++11 -I. -o example-static.avr tests/example-static.cpp
-	avr-size --mcu=attiny85 -C example-static.avr
+	avr-g++ -O3 -std=c++11 -I. -o example-simple.avr examples/example-simple.cpp
 
-	avr-g++ -O3 -std=c++11 -I. -o example-simple.avr tests/example-simple.cpp
-	avr-size --mcu=attiny85 -C example-simple.avr
+	avr-g++ -O3 -std=c++11 -I. -o example-static-0funcs.avr examples/example-static.cpp
+	avr-g++ -O3 -std=c++11 -I. -o example-static-1func.avr examples/example-static.cpp -DFUNC1
+	avr-g++ -O3 -std=c++11 -I. -o example-static-2funcs.avr examples/example-static.cpp -DFUNC1 -DFUNC2
+	avr-g++ -O3 -std=c++11 -I. -o example-static-3funcs.avr examples/example-static.cpp -DFUNC1 -DFUNC2 -DFUNC3
 
-	avr-g++ -O3 -std=c++11 -I. -o example-class.avr tests/example-class.cpp
-	avr-size --mcu=attiny85 -C example-class.avr
+	avr-g++ -O3 -std=c++11 -I. -o example-class-0funcs.avr examples/example-class.cpp
+	avr-g++ -O3 -std=c++11 -I. -o example-class-1func.avr examples/example-class.cpp -DFUNC1
+	avr-g++ -O3 -std=c++11 -I. -o example-class-2funcs.avr examples/example-class.cpp -DFUNC1 -DFUNC2
+	avr-g++ -O3 -std=c++11 -I. -o example-class-3funcs.avr examples/example-class.cpp -DFUNC1 -DFUNC2 -DFUNC3
+
+	avr-size -B example-class-*.avr example-static-*.avr
 
 
 clean:

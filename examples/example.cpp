@@ -87,7 +87,7 @@ CORO_End(fibb, fibb2)
 ///////////////////////////////////////////////////
 
 ///////////////////////////////////////////////////
-class Fibb : coroutine {
+class Fibb {
 public:
     int a=1, b=0;
     
@@ -109,7 +109,7 @@ Fibb fibb3;
 
 ///////////////////////////////////////////////////
 int fibb4() {
-    CORO_StartStatic
+    CORO_Start
     
     static int a=1, b=0;
     

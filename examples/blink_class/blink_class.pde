@@ -12,7 +12,7 @@
 int led = 13;
 
 
-class Blink : coroutine {
+class Blink {
 public:
   int time;
 
