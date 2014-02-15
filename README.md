@@ -10,7 +10,7 @@ Based on [ProtoThreads](http://dunkels.com/adam/pt/) made by Adam Dunkels
 Arduino IDE
 -----------
 
-Because Arduino IDE does not support C++11 only `CORO_StartStatic`, `CORO_Finish`, `yield`, `yieldWhile`, `yieldUntil` and `finnish` are supported.
+Because Arduino IDE does not support C++11 only `CORO_StartStatic`, `CORO_Finish`, `yield`, `yieldWhile`, `yieldUntil` and `finish` are supported.
 
 ###### Example
 
