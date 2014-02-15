@@ -68,7 +68,7 @@ CORO_Method(void) {
     yield();
     
     printf("c");
-    yield();
+    finish();
 }
 CORO_End(voidTest, voidTest2)
 ///////////////////////////////////////////////////
@@ -159,6 +159,7 @@ int main(int argc, const char * argv[])
     for(int i=0; i < 10; i++) {
         voidTest();
         voidTest2();
+        printf(".");
     }
     printf("\n");
 
