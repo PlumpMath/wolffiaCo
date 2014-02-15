@@ -37,9 +37,12 @@ private:
 
 #define CORO_Finish __coResetPosition();
 
-#define CORO_Begin(name) class __coClassName(name) : coroutine { public: __coClassName(name)() = default;
+#define CORO_Begin(name) class __coClassName(name) : coroutine { public:
 #define CORO_Method(ret, args...) ret operator()(args) { CORO_Start;
 #define CORO_End(name, copies...) CORO_Finish; } }; __coClassName(name) name, ##copies;
+
+#define CORO_BeginClass(className) class className : coroutine { public:
+#define CORO_EndClass() CORO_Finish; } };
 
 #define finish(val) do { __coResetPosition(); return val; } while(0)
 #define yield(val) do { __coSavePosition(); return val; __coLabelPosition(); } while(0)

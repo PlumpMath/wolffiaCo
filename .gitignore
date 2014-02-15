@@ -58,3 +58,4 @@ build
 
 main
 main.avr
+*.avr

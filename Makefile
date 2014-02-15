@@ -1,14 +1,22 @@
 all: main
 
-avr: main.hex
-
 main: main.cpp coroutine.h Makefile
 	g++ -O3 -std=c++11 -o main main.cpp
 
 ## just for checking size
-main.hex: main.cpp coroutine.h Makefile
-	avr-g++ -Os -std=c++11 -o main.avr main.cpp
-	avr-size --mcu=attiny85 -C main.avr
+avr:
+	avr-g++ -O3 -std=c++11 -o example.avr example.cpp
+	avr-size --mcu=attiny85 -C example.avr
+
+	avr-g++ -O3 -std=c++11 -o example-static.avr example-static.cpp
+	avr-size --mcu=attiny85 -C example-static.avr
+
+	avr-g++ -O3 -std=c++11 -o example-simple.avr example-simple.cpp
+	avr-size --mcu=attiny85 -C example-simple.avr
+
+	avr-g++ -O3 -std=c++11 -o example-class.avr example-class.cpp
+	avr-size --mcu=attiny85 -C example-class.avr
+
 
 clean:
-	rm -rf main main.hex main.avr
+	rm -rf main main.hex *.avr
