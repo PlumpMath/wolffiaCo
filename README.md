@@ -20,7 +20,7 @@ Because Arduino IDE does not support C++11 so `CORO_Begin`, `CORO_Method` and `C
 int led = 13;
 
 void blink() {
-  CORO_StartStatic
+  CORO_Start
 
   static long time = 0;
 
