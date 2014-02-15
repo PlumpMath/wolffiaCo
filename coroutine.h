@@ -89,6 +89,6 @@ inline void lockRelease(unsigned short id) {
     coroutine_locks &= ~id;
 }
 
-#define lockWait(id, ret...) yieldUntil(lockAcquire(id), ##ret)
+#define lockWaitAcquire(id, ret...) yieldUntil(lockAcquire(id), ##ret)
 
 #endif
