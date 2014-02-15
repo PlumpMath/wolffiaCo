@@ -11,11 +11,8 @@
 		2377EE2818AFF59D0045026E /* coroutine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2377EE2718AFF59D0045026E /* coroutine.cpp */; };
 		2377EE2918AFF59D0045026E /* coroutine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2377EE2718AFF59D0045026E /* coroutine.cpp */; };
 		2377EE2A18AFF5E70045026E /* coroutine.h in Sources */ = {isa = PBXBuildFile; fileRef = 23B9B06818AF9D1B008E2250 /* coroutine.h */; };
-		2377EE3018B000690045026E /* example-class.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2377EE2C18B000690045026E /* example-class.cpp */; };
 		2377EE3118B000690045026E /* example-class.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2377EE2C18B000690045026E /* example-class.cpp */; };
-		2377EE3218B000690045026E /* example-simple.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2377EE2D18B000690045026E /* example-simple.cpp */; };
 		2377EE3318B000690045026E /* example-simple.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2377EE2D18B000690045026E /* example-simple.cpp */; };
-		2377EE3418B000690045026E /* example-static.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2377EE2E18B000690045026E /* example-static.cpp */; };
 		2377EE3518B000690045026E /* example-static.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2377EE2E18B000690045026E /* example-static.cpp */; };
 		2377EE3618B000690045026E /* example.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2377EE2F18B000690045026E /* example.cpp */; };
 		2377EE3718B000690045026E /* example.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2377EE2F18B000690045026E /* example.cpp */; };
@@ -190,10 +187,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2377EE3618B000690045026E /* example.cpp in Sources */,
-				2377EE3418B000690045026E /* example-static.cpp in Sources */,
-				2377EE3018B000690045026E /* example-class.cpp in Sources */,
 				2377EE2818AFF59D0045026E /* coroutine.cpp in Sources */,
-				2377EE3218B000690045026E /* example-simple.cpp in Sources */,
 				23B9B07318AF9DD9008E2250 /* Makefile in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

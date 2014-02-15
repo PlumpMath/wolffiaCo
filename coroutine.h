@@ -76,18 +76,8 @@ private:
 #define LOCK_15 0x4000
 #define LOCK_16 0x8000
 
-inline bool lockAcquire(unsigned short id) {
-    
-    if ((__coroutine_locks & id) == id) return false;
-    
-    __coroutine_locks |= id;
-    
-    return true;
-}
-
-inline void lockRelease(unsigned short id) {
-    __coroutine_locks &= ~id;
-}
+bool lockAcquire(unsigned short id);
+void lockRelease(unsigned short id);
 
 #define lockWaitAndAcquire(id, ret...) yieldUntil(lockAcquire(id), ##ret)
 #define lockWait(id, ret...) yieldWhile(((__coroutine_locks & id) == id), ##ret)
