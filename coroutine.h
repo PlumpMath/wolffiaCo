@@ -13,9 +13,13 @@
 
 class coroutine {
 public:
-    void * __coPosition;
+    void * __coState;
     
-    coroutine() : __coPosition(NULL) {
+    coroutine() : __coState(NULL) {
+    }
+    
+    void resetState() {
+        __coState = NULL;
     }
 private:
 };
@@ -25,15 +29,15 @@ private:
 
 #define __coLabelize() __coConcat(__coLabel, __LINE__)
 
-#define __coResumePosition if (__coPosition != NULL) { goto *__coPosition; }
+#define __coResumePosition if (__coState != NULL) { goto *__coState; }
 #define __coLabelPosition() __coLabelize():
-#define __coSavePosition() __coPosition = &&__coLabelize()
-#define __coResetPosition() __coPosition = NULL;
+#define __coSavePosition() __coState = &&__coLabelize()
+#define __coResetPosition() __coState = NULL;
 
 #define __coClassName(name) __coConcat(__co_class_, name)
 
 #define CORO_Start __coResumePosition; __coSavePosition(); __coLabelPosition();
-#define CORO_StaticStart static void * __coPosition = NULL; CORO_Start;
+#define CORO_StartStatic static void * __coState = NULL; CORO_Start;
 
 #define CORO_Finish __coResetPosition();
 
