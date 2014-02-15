@@ -10,7 +10,7 @@ Based on [ProtoThreads](http://dunkels.com/adam/pt/) made by Adam Dunkels
 Arduino IDE
 -----------
 
-Because Arduino IDE does not support C++11 only `CORO_StartStatic`, `CORO_Finish`, `yield`, `yieldWhile`, `yieldUntil` and `finish` are supported.
+Because Arduino IDE does not support C++11 so `CORO_Begin`, `CORO_Method` and `CORO_End` are not supported.
 
 ###### Example
 
@@ -30,6 +30,32 @@ void blink() {
   
   CORO_Finish
 }
+```
+
+###### Class example
+
+```
+class Blink : coroutine {
+public:
+  int time;
+
+  Blink() : time(0) {}
+
+  void operator()() {
+    CORO_Start
+
+    time = millis();
+
+    digitalWrite(led, HIGH);
+    yieldUntil(millis() > time+1000);
+  
+    digitalWrite(led, LOW);
+    yieldUntil(millis() > time+2000);
+  
+    CORO_Finish
+  }
+};
+Blink blink;
 ```
 
 ### Installation
