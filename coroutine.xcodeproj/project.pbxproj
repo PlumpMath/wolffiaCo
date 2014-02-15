@@ -12,6 +12,10 @@
 		2377EE2418AFD1810045026E /* example-simple.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2377EE2018AFD1810045026E /* example-simple.cpp */; };
 		2377EE2518AFD1810045026E /* example-static.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2377EE2118AFD1810045026E /* example-static.cpp */; };
 		2377EE2618AFD1810045026E /* example.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2377EE2218AFD1810045026E /* example.cpp */; };
+		2377EE2818AFF59D0045026E /* coroutine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2377EE2718AFF59D0045026E /* coroutine.cpp */; };
+		2377EE2918AFF59D0045026E /* coroutine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2377EE2718AFF59D0045026E /* coroutine.cpp */; };
+		2377EE2A18AFF5E70045026E /* coroutine.h in Sources */ = {isa = PBXBuildFile; fileRef = 23B9B06818AF9D1B008E2250 /* coroutine.h */; };
+		2377EE2B18AFF65C0045026E /* example.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2377EE2218AFD1810045026E /* example.cpp */; };
 		23B9B07318AF9DD9008E2250 /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = 23B9B06B18AF9D1B008E2250 /* Makefile */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +46,7 @@
 		2377EE2018AFD1810045026E /* example-simple.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "example-simple.cpp"; path = "tests/example-simple.cpp"; sourceTree = "<group>"; };
 		2377EE2118AFD1810045026E /* example-static.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "example-static.cpp"; path = "tests/example-static.cpp"; sourceTree = "<group>"; };
 		2377EE2218AFD1810045026E /* example.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = example.cpp; path = tests/example.cpp; sourceTree = "<group>"; };
+		2377EE2718AFF59D0045026E /* coroutine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = coroutine.cpp; sourceTree = "<group>"; };
 		23B9B06818AF9D1B008E2250 /* coroutine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = coroutine.h; sourceTree = "<group>"; };
 		23B9B06B18AF9D1B008E2250 /* Makefile */ = {isa = PBXFileReference; explicitFileType = sourcecode.make; fileEncoding = 4; path = Makefile; sourceTree = "<group>"; usesTabs = 1; };
 		23B9B06C18AF9D1B008E2250 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
@@ -69,6 +74,7 @@
 		23B9B05318AF9CBA008E2250 = {
 			isa = PBXGroup;
 			children = (
+				2377EE2718AFF59D0045026E /* coroutine.cpp */,
 				23B9B06818AF9D1B008E2250 /* coroutine.h */,
 				23B9B06B18AF9D1B008E2250 /* Makefile */,
 				23B9B06C18AF9D1B008E2250 /* README.md */,
@@ -166,8 +172,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2377EE2A18AFF5E70045026E /* coroutine.h in Sources */,
 				2377EE2618AFD1810045026E /* example.cpp in Sources */,
 				2377EE2518AFD1810045026E /* example-static.cpp in Sources */,
+				2377EE2918AFF59D0045026E /* coroutine.cpp in Sources */,
 				2377EE0F18AF9F0B0045026E /* Makefile in Sources */,
 				2377EE2418AFD1810045026E /* example-simple.cpp in Sources */,
 				2377EE2318AFD1810045026E /* example-class.cpp in Sources */,
@@ -178,6 +186,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2377EE2B18AFF65C0045026E /* example.cpp in Sources */,
+				2377EE2818AFF59D0045026E /* coroutine.cpp in Sources */,
 				23B9B07318AF9DD9008E2250 /* Makefile in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
