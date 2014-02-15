@@ -12,9 +12,13 @@ Arduino IDE
 
 Because Arduino IDE does not support C++11 so `CORO_Begin`, `CORO_Method` and `CORO_End` are not supported.
 
-###### Example
+###### Function example
 
 ```
+#include <coroutine.h>
+
+int led = 13;
+
 void blink() {
   CORO_StartStatic
 
@@ -30,11 +34,23 @@ void blink() {
   
   CORO_Finish
 }
+
+void setup() {                
+  pinMode(led, OUTPUT);     
+}
+
+void loop() {  
+  blink();
+}
 ```
 
 ###### Class example
 
 ```
+#include <coroutine.h>
+
+int led = 13;
+
 class Blink : coroutine {
 public:
   int time;
@@ -56,6 +72,14 @@ public:
   }
 };
 Blink blink;
+
+void setup() {                
+  pinMode(led, OUTPUT);     
+}
+
+void loop() {  
+  blink();
+}
 ```
 
 ### Installation
