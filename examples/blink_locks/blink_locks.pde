@@ -36,7 +36,6 @@ void blinkOn() {
   CORO_StartStatic
   
   while(true) {
-    
     lockWaitAndAcquire(onLock);
 
     digitalWrite(led, HIGH);

@@ -8,5 +8,5 @@
 
 #include "coroutine.h"
 
-unsigned short coroutine_locks = 0;
+unsigned short __coroutine_locks = 0;
 

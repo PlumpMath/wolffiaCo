@@ -11,7 +11,7 @@
 
 #include <stddef.h>
 
-extern unsigned short coroutine_locks;
+extern unsigned short __coroutine_locks;
 
 class coroutine {
 public:
@@ -78,18 +78,18 @@ private:
 
 inline bool lockAcquire(unsigned short id) {
     
-    if ((coroutine_locks & id) == id) return false;
+    if ((__coroutine_locks & id) == id) return false;
     
-    coroutine_locks |= id;
+    __coroutine_locks |= id;
     
     return true;
 }
 
 inline void lockRelease(unsigned short id) {
-    coroutine_locks &= ~id;
+    __coroutine_locks &= ~id;
 }
 
 #define lockWaitAndAcquire(id, ret...) yieldUntil(lockAcquire(id), ##ret)
-#define lockWait(id, ret...) yieldWhile(((coroutine_locks & id) == id), ##ret)
+#define lockWait(id, ret...) yieldWhile(((__coroutine_locks & id) == id), ##ret)
 
 #endif
