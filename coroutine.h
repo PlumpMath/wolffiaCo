@@ -24,7 +24,6 @@
 #define __coClassName(name) __coConcat(__co_class_, name)
 
 #define CORO_Start static void * __coState = NULL; __coResumePosition; __coSavePosition(); __coLabelPosition();
-
 #define CORO_Finish __coResetPosition();
 
 #define CORO_Begin(name) class __coClassName(name) { public:
