@@ -9,7 +9,7 @@
 #include "coroutine.h"
 
 void func() {
-    CORO_StartStatic
+    CORO_StaticStart
     
     
     
@@ -17,7 +17,7 @@ void func() {
 }
 
 void func2() {
-    CORO_StartStatic
+    CORO_StaticStart
     
     
     

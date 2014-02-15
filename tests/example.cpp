@@ -109,7 +109,7 @@ Fibb fibb3;
 
 ///////////////////////////////////////////////////
 int fibb4() {
-    CORO_StartStatic;
+    CORO_StaticStart;
     
     static int a=1, b=0;
     
