@@ -61,9 +61,12 @@ CORO_Begin(voidTest);
 CORO_Method(void) {
     printf("a");
     yield();
+    
     printf("b");
     yield();
+    
     printf("c");
+    yield();
 }
 CORO_End(voidTest, voidTest2)
 ///////////////////////////////////////////////////
