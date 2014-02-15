@@ -56,6 +56,5 @@ build
 !*.xcodeproj/project.pbxproj
 !*.xcworkspace/contents.xcworkspacedata
 
-main
-main.avr
 *.avr
+example

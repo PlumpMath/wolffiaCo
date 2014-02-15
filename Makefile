@@ -1,7 +1,7 @@
-all: main
+all: example
 
-main: main.cpp coroutine.h Makefile
-	g++ -O3 -std=c++11 -o main main.cpp
+example: example.cpp coroutine.h Makefile
+	g++ -O3 -std=c++11 -o example example.cpp
 
 ## just for checking size
 avr:
@@ -19,4 +19,4 @@ avr:
 
 
 clean:
-	rm -rf main main.hex *.avr
+	rm -rf example *.avr
