@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Parker Kane. All rights reserved.
 //
 
-#include "coroutine.h"
+#include <coroutine.h>
 
 CORO_BeginClass(Func)
 CORO_Method(void){
