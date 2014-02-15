@@ -23,7 +23,7 @@ void blink() {
   time = millis();
 
   digitalWrite(led, HIGH);
-  yieldUntil(millis() > time+10);
+  yieldUntil(millis() > time+1000);
   
   digitalWrite(led, LOW);
   yieldUntil(millis() > time+2000);
