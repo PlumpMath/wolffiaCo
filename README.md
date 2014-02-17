@@ -1,20 +1,16 @@
-coroutine.h
-===========
+wolffiaCo
+=========
 
-Simple coroutine aka non preemptive task scheduler library for tiny devices.
+wolffiaCo is simple coroutine based aka non preemptive task scheduler library for tiny devices e.g. Attiny85.
 
-Uses [Label as Values](http://gcc.gnu.org/onlinedocs/gcc/Labels-as-Values.html) extension.
-
-Based on [ProtoThreads](http://dunkels.com/adam/pt/) made by Adam Dunkels.
+Based on [ProtoThreads](http://dunkels.com/adam/pt/) by Adam Dunkels and uses [Label as Values](http://gcc.gnu.org/onlinedocs/gcc/Labels-as-Values.html) extension. 
 
 Arduino IDE
 -----------
 
-Because Arduino IDE does not support C++11 so `CORO_Begin`, `CORO_Method` and `CORO_End` are not supported.
-
 ###### Function example
 
-```
+```C
 #include <coroutine.h>
 
 int led = 13;
@@ -26,11 +22,13 @@ void blink() {
 
   time = millis();
 
-  digitalWrite(led, HIGH);
-  yieldUntil(millis() > time+1000);
+  while(true) {
+    digitalWrite(led, HIGH);
+    yieldUntil(millis() > time+1000);
   
-  digitalWrite(led, LOW);
-  yieldUntil(millis() > time+2000);
+    digitalWrite(led, LOW);
+    yieldUntil(millis() > time+2000);
+  }
   
   CORO_Finish
 }
@@ -46,7 +44,7 @@ void loop() {
 
 ###### Class example
 
-```
+```C++
 #include <coroutine.h>
 
 int led = 13;
@@ -62,11 +60,13 @@ public:
 
     time = millis();
 
-    digitalWrite(led, HIGH);
-    yieldUntil(millis() > time+1000);
+    while(true) {
+      digitalWrite(led, HIGH);
+      yieldUntil(millis() > time+1000);
   
-    digitalWrite(led, LOW);
-    yieldUntil(millis() > time+2000);
+      digitalWrite(led, LOW);
+      yieldUntil(millis() > time+2000);
+    }
   
     CORO_Finish
   }
@@ -86,7 +86,7 @@ void loop() {
 
 ###### OS X
 
-```
+```bash
 $ cd ~/Documents/Arduino/libraries/
 $ git clone https://github.com/parkerkane/coroutine.h.git coroutine
 ```
