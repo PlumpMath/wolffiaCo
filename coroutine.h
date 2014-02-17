@@ -26,12 +26,18 @@
 #define CORO_Start static void * __coState = NULL; __coResumePosition; __coSavePosition(); __coLabelPosition();
 #define CORO_Finish __coResetPosition();
 
+#if __cplusplus >= 201103L
+
+// These requires C++11
+
 #define CORO_Begin(name) class __coClassName(name) { public:
 #define CORO_Method(ret, args...) ret operator()(args) { CORO_Start;
 #define CORO_End(name, copies...) CORO_Finish; } }; __coClassName(name) name, ##copies;
 
 #define CORO_BeginClass(className) class className { public:
 #define CORO_EndClass() CORO_Finish; } };
+
+#endif
 
 #define finish(val) do { __coResetPosition(); return val; } while(0)
 #define yield(val) do { __coSavePosition(); return val; __coLabelPosition(); } while(0)
