@@ -8,7 +8,7 @@
 
 #include <stdio.h>
 
-#include "coroutine.hpp"
+#include "coroutine.h"
 
 CORO_Define(Fibb)
 int fibb() {

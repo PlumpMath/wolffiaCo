@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Timo Reunanen. All rights reserved.
 //
 
-#include <coroutine.hpp>
+#include <coroutine.h>
 
 #ifdef FUNC1
 CORO_Define(Func1)

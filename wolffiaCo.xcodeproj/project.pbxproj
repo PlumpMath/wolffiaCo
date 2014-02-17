@@ -58,7 +58,7 @@
 /* Begin PBXFileReference section */
 		2341E86E18B1CEED005C29B7 /* maintest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = maintest.cpp; sourceTree = "<group>"; };
 		2341E86F18B1CEED005C29B7 /* maintest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = maintest.h; sourceTree = "<group>"; };
-		2341E87218B23F4C005C29B7 /* coroutine.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = coroutine.hpp; sourceTree = "<group>"; };
+		2341E87218B23F4C005C29B7 /* coroutine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = coroutine.h; sourceTree = "<group>"; };
 		2341E87618B25AF7005C29B7 /* example.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = example.cpp; path = examples/example.cpp; sourceTree = "<group>"; };
 		2377EE1718AF9F250045026E /* index */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = index; sourceTree = BUILT_PRODUCTS_DIR; };
 		2377EE2718AFF59D0045026E /* coroutine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = coroutine.cpp; sourceTree = "<group>"; };
@@ -105,7 +105,7 @@
 			children = (
 				2377EE2718AFF59D0045026E /* coroutine.cpp */,
 				23B9B06818AF9D1B008E2250 /* coroutine_old.h */,
-				2341E87218B23F4C005C29B7 /* coroutine.hpp */,
+				2341E87218B23F4C005C29B7 /* coroutine.h */,
 				23B9B06B18AF9D1B008E2250 /* Makefile */,
 				23B9B06C18AF9D1B008E2250 /* README.md */,
 				23DBDD3918B1CCB9002E8717 /* tests */,
