@@ -15,7 +15,7 @@ int led = 13;
 #define offLock LOCK_2
 
 void blink() {
-  CORO_Start
+  CORO_Simple();
 
   static long time = 0;
 
@@ -28,32 +28,26 @@ void blink() {
     lockRelease(offLock);
     yieldUntil(millis() > time+2000);
   }
-  
-  CORO_Finish
 }
 
 void blinkOn() {
-  CORO_Start
+  CORO_Simple();
   
   while(true) {
     lockWaitAndAcquire(onLock);
 
     digitalWrite(led, HIGH);
   }
-  
-  CORO_Finish
 }
 
 void blinkOff() {
-  CORO_Start
+  CORO_Simple();
   
   while(true) {
     lockWaitAndAcquire(offLock);
     
     digitalWrite(led, LOW);
   }
-  
-  CORO_Finish
 }
 
 // the setup routine runs once when you press reset:

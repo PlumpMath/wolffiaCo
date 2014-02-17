@@ -18,8 +18,9 @@ public:
 
   Blink() : time(0) {}
 
+  CORO_Define(Blink);
   void operator()() {
-    CORO_Start
+    CORO_Init(Blink);
 
     time = millis();
 
@@ -28,8 +29,6 @@ public:
   
     digitalWrite(led, LOW);
     yieldUntil(millis() > time+2000);
-  
-    CORO_Finish
   }
 };
 Blink blink;

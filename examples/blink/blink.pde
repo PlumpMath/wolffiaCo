@@ -13,7 +13,7 @@ int led = 13;
 
 
 void blink() {
-  CORO_Start
+  CORO_Simple();
 
   static long time = 0;
 
@@ -24,8 +24,6 @@ void blink() {
   
   digitalWrite(led, LOW);
   yieldUntil(millis() > time+2000);
-  
-  CORO_Finish
 }
 
 // the setup routine runs once when you press reset:
