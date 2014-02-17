@@ -17,13 +17,15 @@ void blink() {
 
   static long time = 0;
 
-  time = millis();
+  while(true) {
+    time = millis();
 
-  digitalWrite(led, HIGH);
-  yieldUntil(millis() > time+1000);
-  
-  digitalWrite(led, LOW);
-  yieldUntil(millis() > time+2000);
+    digitalWrite(led, HIGH);
+    yieldUntil(millis() > time+1000);
+    
+    digitalWrite(led, LOW);
+    yieldUntil(millis() > time+2000);
+  }
 }
 
 // the setup routine runs once when you press reset:

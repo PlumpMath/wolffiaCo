@@ -22,13 +22,15 @@ public:
   void operator()() {
     CORO_Init(Blink);
 
-    time = millis();
+    while(true) {
+      time = millis();
 
-    digitalWrite(led, HIGH);
-    yieldUntil(millis() > time+1000);
-  
-    digitalWrite(led, LOW);
-    yieldUntil(millis() > time+2000);
+      digitalWrite(led, HIGH);
+      yieldUntil(millis() > time+1000);
+    
+      digitalWrite(led, LOW);
+      yieldUntil(millis() > time+2000);
+    }
   }
 };
 Blink blink;

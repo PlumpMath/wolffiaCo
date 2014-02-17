@@ -51,10 +51,10 @@ public:
 #define __coSavePosition() __coData->state = &&__coLabelize()
 
 #if defined(__CPP11__) || defined(__C__)
-# define CORO_Define(name) struct COROData __coName(name) = { .state = NULL, .flags = 0};
+# define CORO_Define(name) struct COROData __coName(name) = { NULL, 0 };
 #else
 # define CORO_Define(name) CORODataClass __coName(name);
-# define CORO_DefineStruct(name) struct COROData __coName(name) = { .state = NULL, .flags = 0};
+# define CORO_DefineStruct(name) struct COROData __coName(name) = { NULL, 0 };
 #endif
 
 #define CORO_Init_Impl(dataType, name, ret...)\
