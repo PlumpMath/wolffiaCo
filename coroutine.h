@@ -50,10 +50,12 @@ public:
 #define __coLabelPosition() __coLabelize():
 #define __coSavePosition() __coData->state = &&__coLabelize()
 
+#define CORO_Define CORO_Define_Impl
+
 #if defined(__CPP11__) || defined(__C__)
-# define CORO_Define(name) struct COROData __coName(name) = { NULL, 0 };
+# define CORO_Define_Impl(name) struct COROData __coName(name) = { NULL, 0 };
 #else
-# define CORO_Define(name) CORODataClass __coName(name);
+# define CORO_Define_Impl(name) CORODataClass __coName(name);
 # define CORO_DefineStruct(name) struct COROData __coName(name) = { NULL, 0 };
 #endif
 
@@ -72,7 +74,7 @@ public:
 
 #if defined(__CPP11__) || defined(__C__)
 #  define CORO_Init(name, ret...) CORO_Init_Impl(COROData, name, ##ret)
-#  define CORO_Simple(ret...) static CORO_Define(__CORO); CORO_Init_Impl(COROData, __CORO, ##ret)
+#  define CORO_Simple(ret...) static CORO_Define_Impl(__CORO); CORO_Init_Impl(COROData, __CORO, ##ret)
 #else
 #  define CORO_Init(name, ret...) CORO_Init_Impl(CORODataClass, name, ##ret)
 #  define CORO_Simple(ret...) static CORO_DefineStruct(__CORO); CORO_Init_Impl(COROData, __CORO, ##ret)
