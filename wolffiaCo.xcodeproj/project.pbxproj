@@ -7,16 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2341E87018B1CEED005C29B7 /* maintest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2341E86E18B1CEED005C29B7 /* maintest.cpp */; };
 		2377EE0F18AF9F0B0045026E /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = 23B9B06B18AF9D1B008E2250 /* Makefile */; };
 		2377EE2818AFF59D0045026E /* coroutine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2377EE2718AFF59D0045026E /* coroutine.cpp */; };
 		2377EE2918AFF59D0045026E /* coroutine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2377EE2718AFF59D0045026E /* coroutine.cpp */; };
-		2377EE2A18AFF5E70045026E /* coroutine.h in Sources */ = {isa = PBXBuildFile; fileRef = 23B9B06818AF9D1B008E2250 /* coroutine.h */; };
+		2377EE2A18AFF5E70045026E /* coroutine_old.h in Sources */ = {isa = PBXBuildFile; fileRef = 23B9B06818AF9D1B008E2250 /* coroutine_old.h */; };
 		2377EE3118B000690045026E /* example-class.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2377EE2C18B000690045026E /* example-class.cpp */; };
 		2377EE3318B000690045026E /* example-simple.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2377EE2D18B000690045026E /* example-simple.cpp */; };
 		2377EE3518B000690045026E /* example-static.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2377EE2E18B000690045026E /* example-static.cpp */; };
 		2377EE3618B000690045026E /* example.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2377EE2F18B000690045026E /* example.cpp */; };
 		2377EE3718B000690045026E /* example.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2377EE2F18B000690045026E /* example.cpp */; };
 		23B9B07318AF9DD9008E2250 /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = 23B9B06B18AF9D1B008E2250 /* Makefile */; };
+		23DBDD4118B1CD0E002E8717 /* coroutine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2377EE2718AFF59D0045026E /* coroutine.cpp */; };
+		23DBDD4218B1CD0E002E8717 /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = 23B9B06B18AF9D1B008E2250 /* Makefile */; };
+		23DBDD4A18B1CD7F002E8717 /* tap.c in Sources */ = {isa = PBXBuildFile; fileRef = 23DBDD3A18B1CCB9002E8717 /* tap.c */; };
+		23DBDD4B18B1CD7F002E8717 /* tap.h in Sources */ = {isa = PBXBuildFile; fileRef = 23DBDD3B18B1CCB9002E8717 /* tap.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -38,19 +43,34 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
+		23DBDD4518B1CD0E002E8717 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2341E86E18B1CEED005C29B7 /* maintest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = maintest.cpp; sourceTree = "<group>"; };
+		2341E86F18B1CEED005C29B7 /* maintest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = maintest.h; sourceTree = "<group>"; };
+		2341E87218B23F4C005C29B7 /* coroutine.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = coroutine.hpp; sourceTree = "<group>"; };
 		2377EE1718AF9F250045026E /* index */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = index; sourceTree = BUILT_PRODUCTS_DIR; };
 		2377EE2718AFF59D0045026E /* coroutine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = coroutine.cpp; sourceTree = "<group>"; };
 		2377EE2C18B000690045026E /* example-class.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "example-class.cpp"; path = "examples/example-class.cpp"; sourceTree = "<group>"; };
 		2377EE2D18B000690045026E /* example-simple.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "example-simple.cpp"; path = "examples/example-simple.cpp"; sourceTree = "<group>"; };
 		2377EE2E18B000690045026E /* example-static.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "example-static.cpp"; path = "examples/example-static.cpp"; sourceTree = "<group>"; };
 		2377EE2F18B000690045026E /* example.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = example.cpp; path = examples/example.cpp; sourceTree = "<group>"; };
-		23B9B06818AF9D1B008E2250 /* coroutine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = coroutine.h; sourceTree = "<group>"; };
+		23B9B06818AF9D1B008E2250 /* coroutine_old.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = coroutine_old.h; sourceTree = "<group>"; };
 		23B9B06B18AF9D1B008E2250 /* Makefile */ = {isa = PBXFileReference; explicitFileType = sourcecode.make; fileEncoding = 4; path = Makefile; sourceTree = "<group>"; usesTabs = 1; };
 		23B9B06C18AF9D1B008E2250 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
-		23B9B07A18AF9DD9008E2250 /* libtest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = libtest; sourceTree = BUILT_PRODUCTS_DIR; };
+		23B9B07A18AF9DD9008E2250 /* example */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = example; sourceTree = BUILT_PRODUCTS_DIR; };
+		23DBDD3A18B1CCB9002E8717 /* tap.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tap.c; sourceTree = "<group>"; };
+		23DBDD3B18B1CCB9002E8717 /* tap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tap.h; sourceTree = "<group>"; };
+		23DBDD4918B1CD0E002E8717 /* Tests */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Tests; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +88,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		23DBDD4418B1CD0E002E8717 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -75,9 +102,11 @@
 			isa = PBXGroup;
 			children = (
 				2377EE2718AFF59D0045026E /* coroutine.cpp */,
-				23B9B06818AF9D1B008E2250 /* coroutine.h */,
+				23B9B06818AF9D1B008E2250 /* coroutine_old.h */,
+				2341E87218B23F4C005C29B7 /* coroutine.hpp */,
 				23B9B06B18AF9D1B008E2250 /* Makefile */,
 				23B9B06C18AF9D1B008E2250 /* README.md */,
+				23DBDD3918B1CCB9002E8717 /* tests */,
 				23B9B07C18AF9E5F008E2250 /* Examples */,
 				23B9B07B18AF9E52008E2250 /* Product */,
 			);
@@ -86,7 +115,8 @@
 		23B9B07B18AF9E52008E2250 /* Product */ = {
 			isa = PBXGroup;
 			children = (
-				23B9B07A18AF9DD9008E2250 /* libtest */,
+				23DBDD4918B1CD0E002E8717 /* Tests */,
+				23B9B07A18AF9DD9008E2250 /* example */,
 				2377EE1718AF9F250045026E /* index */,
 			);
 			name = Product;
@@ -101,6 +131,17 @@
 				2377EE2F18B000690045026E /* example.cpp */,
 			);
 			name = Examples;
+			sourceTree = "<group>";
+		};
+		23DBDD3918B1CCB9002E8717 /* tests */ = {
+			isa = PBXGroup;
+			children = (
+				23DBDD3A18B1CCB9002E8717 /* tap.c */,
+				23DBDD3B18B1CCB9002E8717 /* tap.h */,
+				2341E86E18B1CEED005C29B7 /* maintest.cpp */,
+				2341E86F18B1CEED005C29B7 /* maintest.h */,
+			);
+			path = tests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,9 +164,9 @@
 			productReference = 2377EE1718AF9F250045026E /* index */;
 			productType = "com.apple.product-type.tool";
 		};
-		23B9B07118AF9DD9008E2250 /* libtest */ = {
+		23B9B07118AF9DD9008E2250 /* example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 23B9B07718AF9DD9008E2250 /* Build configuration list for PBXNativeTarget "libtest" */;
+			buildConfigurationList = 23B9B07718AF9DD9008E2250 /* Build configuration list for PBXNativeTarget "example" */;
 			buildPhases = (
 				23B9B07218AF9DD9008E2250 /* Sources */,
 				23B9B07518AF9DD9008E2250 /* Frameworks */,
@@ -135,9 +176,26 @@
 			);
 			dependencies = (
 			);
-			name = libtest;
+			name = example;
 			productName = coroutine;
-			productReference = 23B9B07A18AF9DD9008E2250 /* libtest */;
+			productReference = 23B9B07A18AF9DD9008E2250 /* example */;
+			productType = "com.apple.product-type.tool";
+		};
+		23DBDD3E18B1CD0E002E8717 /* tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 23DBDD4618B1CD0E002E8717 /* Build configuration list for PBXNativeTarget "tests" */;
+			buildPhases = (
+				23DBDD3F18B1CD0E002E8717 /* Sources */,
+				23DBDD4418B1CD0E002E8717 /* Frameworks */,
+				23DBDD4518B1CD0E002E8717 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = tests;
+			productName = coroutine;
+			productReference = 23DBDD4918B1CD0E002E8717 /* Tests */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -161,7 +219,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				23B9B07118AF9DD9008E2250 /* libtest */,
+				23B9B07118AF9DD9008E2250 /* example */,
+				23DBDD3E18B1CD0E002E8717 /* tests */,
 				2377EE0D18AF9F0B0045026E /* index */,
 			);
 		};
@@ -172,7 +231,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2377EE2A18AFF5E70045026E /* coroutine.h in Sources */,
+				23DBDD4A18B1CD7F002E8717 /* tap.c in Sources */,
+				23DBDD4B18B1CD7F002E8717 /* tap.h in Sources */,
+				2377EE2A18AFF5E70045026E /* coroutine_old.h in Sources */,
 				2377EE3118B000690045026E /* example-class.cpp in Sources */,
 				2377EE3518B000690045026E /* example-static.cpp in Sources */,
 				2377EE3718B000690045026E /* example.cpp in Sources */,
@@ -189,6 +250,16 @@
 				2377EE3618B000690045026E /* example.cpp in Sources */,
 				2377EE2818AFF59D0045026E /* coroutine.cpp in Sources */,
 				23B9B07318AF9DD9008E2250 /* Makefile in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		23DBDD3F18B1CD0E002E8717 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				23DBDD4118B1CD0E002E8717 /* coroutine.cpp in Sources */,
+				23DBDD4218B1CD0E002E8717 /* Makefile in Sources */,
+				2341E87018B1CEED005C29B7 /* maintest.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,14 +351,28 @@
 		23B9B07818AF9DD9008E2250 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				PRODUCT_NAME = libtest;
+				PRODUCT_NAME = example;
 			};
 			name = Debug;
 		};
 		23B9B07918AF9DD9008E2250 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				PRODUCT_NAME = libtest;
+				PRODUCT_NAME = example;
+			};
+			name = Release;
+		};
+		23DBDD4718B1CD0E002E8717 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = Tests;
+			};
+			name = Debug;
+		};
+		23DBDD4818B1CD0E002E8717 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = Tests;
 			};
 			name = Release;
 		};
@@ -312,11 +397,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		23B9B07718AF9DD9008E2250 /* Build configuration list for PBXNativeTarget "libtest" */ = {
+		23B9B07718AF9DD9008E2250 /* Build configuration list for PBXNativeTarget "example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				23B9B07818AF9DD9008E2250 /* Debug */,
 				23B9B07918AF9DD9008E2250 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		23DBDD4618B1CD0E002E8717 /* Build configuration list for PBXNativeTarget "tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				23DBDD4718B1CD0E002E8717 /* Debug */,
+				23DBDD4818B1CD0E002E8717 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

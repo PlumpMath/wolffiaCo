@@ -141,22 +141,26 @@ int main(int argc, const char * argv[])
         printf("%i ", even());
     }
     printf("\n");
+    
     printf("fibb: ");
     for(int i=0; i < 20; i++) {
         printf("%i ", fibb());
     }
     printf("\n");
+    
     printf("fibb2: ");
     for(int i=0; i < 20; i++) {
         printf("%i ", fibb2());
     }
     printf("\n");
+    
     printf("fibb3: ");
     for(int i=0; i < 20; i++) {
         printf("%i ", fibb3());
     }
     printf("\n");
-    printf("fibb4: ");
+    
+    printf("fibb4_1: ");
     for(int i=0; i < 10; i++) {
         printf("%i ", fibb4());
     }
@@ -164,6 +168,7 @@ int main(int argc, const char * argv[])
         printf("%i ", fibb4());
     }
     printf("\n");
+    
     printf("fibb4_2: ");
     fibb4Controller |= CORO_FLAG_RESET;
     for(int i=0; i < 10; i++) {
