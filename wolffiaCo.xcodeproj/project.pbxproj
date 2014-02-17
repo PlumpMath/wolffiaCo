@@ -13,11 +13,9 @@
 		2377EE0F18AF9F0B0045026E /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = 23B9B06B18AF9D1B008E2250 /* Makefile */; };
 		2377EE2818AFF59D0045026E /* coroutine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2377EE2718AFF59D0045026E /* coroutine.cpp */; };
 		2377EE2918AFF59D0045026E /* coroutine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2377EE2718AFF59D0045026E /* coroutine.cpp */; };
-		2377EE2A18AFF5E70045026E /* coroutine_old.h in Sources */ = {isa = PBXBuildFile; fileRef = 23B9B06818AF9D1B008E2250 /* coroutine_old.h */; };
 		2377EE3118B000690045026E /* example-class.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2377EE2C18B000690045026E /* example-class.cpp */; };
 		2377EE3318B000690045026E /* example-simple.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2377EE2D18B000690045026E /* example-simple.cpp */; };
 		2377EE3518B000690045026E /* example-static.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2377EE2E18B000690045026E /* example-static.cpp */; };
-		2377EE3718B000690045026E /* example_old.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2377EE2F18B000690045026E /* example_old.cpp */; };
 		23B9B07318AF9DD9008E2250 /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = 23B9B06B18AF9D1B008E2250 /* Makefile */; };
 		23DBDD4118B1CD0E002E8717 /* coroutine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2377EE2718AFF59D0045026E /* coroutine.cpp */; };
 		23DBDD4218B1CD0E002E8717 /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = 23B9B06B18AF9D1B008E2250 /* Makefile */; };
@@ -65,8 +63,6 @@
 		2377EE2C18B000690045026E /* example-class.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "example-class.cpp"; path = "examples/example-class.cpp"; sourceTree = "<group>"; };
 		2377EE2D18B000690045026E /* example-simple.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "example-simple.cpp"; path = "examples/example-simple.cpp"; sourceTree = "<group>"; };
 		2377EE2E18B000690045026E /* example-static.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "example-static.cpp"; path = "examples/example-static.cpp"; sourceTree = "<group>"; };
-		2377EE2F18B000690045026E /* example_old.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = example_old.cpp; path = examples/example_old.cpp; sourceTree = "<group>"; };
-		23B9B06818AF9D1B008E2250 /* coroutine_old.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = coroutine_old.h; sourceTree = "<group>"; };
 		23B9B06B18AF9D1B008E2250 /* Makefile */ = {isa = PBXFileReference; explicitFileType = sourcecode.make; fileEncoding = 4; path = Makefile; sourceTree = "<group>"; usesTabs = 1; };
 		23B9B06C18AF9D1B008E2250 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		23B9B07A18AF9DD9008E2250 /* example */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = example; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -104,7 +100,6 @@
 			isa = PBXGroup;
 			children = (
 				2377EE2718AFF59D0045026E /* coroutine.cpp */,
-				23B9B06818AF9D1B008E2250 /* coroutine_old.h */,
 				2341E87218B23F4C005C29B7 /* coroutine.h */,
 				23B9B06B18AF9D1B008E2250 /* Makefile */,
 				23B9B06C18AF9D1B008E2250 /* README.md */,
@@ -131,7 +126,6 @@
 				2377EE2C18B000690045026E /* example-class.cpp */,
 				2377EE2D18B000690045026E /* example-simple.cpp */,
 				2377EE2E18B000690045026E /* example-static.cpp */,
-				2377EE2F18B000690045026E /* example_old.cpp */,
 			);
 			name = Examples;
 			sourceTree = "<group>";
@@ -237,10 +231,8 @@
 				2341E87818B25AF7005C29B7 /* example.cpp in Sources */,
 				23DBDD4A18B1CD7F002E8717 /* tap.c in Sources */,
 				23DBDD4B18B1CD7F002E8717 /* tap.h in Sources */,
-				2377EE2A18AFF5E70045026E /* coroutine_old.h in Sources */,
 				2377EE3118B000690045026E /* example-class.cpp in Sources */,
 				2377EE3518B000690045026E /* example-static.cpp in Sources */,
-				2377EE3718B000690045026E /* example_old.cpp in Sources */,
 				2377EE2918AFF59D0045026E /* coroutine.cpp in Sources */,
 				2377EE3318B000690045026E /* example-simple.cpp in Sources */,
 				2377EE0F18AF9F0B0045026E /* Makefile in Sources */,

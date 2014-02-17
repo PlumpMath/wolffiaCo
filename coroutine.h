@@ -9,12 +9,28 @@
 #ifndef wolffiaCo_coroutine_h
 #define wolffiaCo_coroutine_h
 
+#if __cplusplus >= 201103L
+#define __CPP11__
+#endif
+
 #include <stddef.h>
 
 struct COROData {
     void *state;
     unsigned char flags;
 };
+
+#ifndef __CPP11__
+
+class CORODataClass {
+public:
+    void *state;
+    unsigned char flags;
+    
+    CORODataClass() : state(NULL), flags(0) {}
+};
+
+#endif
 
 #define CORO_FLAG_SUSPEND   0x01
 #define CORO_FLAG_RESET     0x02
@@ -30,10 +46,15 @@ struct COROData {
 #define __coLabelPosition() __coLabelize():
 #define __coSavePosition() __coData->state = &&__coLabelize()
 
-#define CORO_Define(name) struct COROData __coName(name) = { .state = NULL, .flags = 0};
+#ifdef __CPP11__
+# define CORO_Define(name) struct COROData __coName(name) = { .state = NULL, .flags = 0};
+#else
+# define CORO_Define(name) CORODataClass __coName(name);
+# define CORO_DefineStruct(name) struct COROData __coName(name) = { .state = NULL, .flags = 0};
+#endif
 
-#define CORO_Init(name, ret...)\
-    COROData *__coData = &(__coName(name));\
+#define CORO_Init_Impl(dataType, name, ret...)\
+    dataType *__coData = &(__coName(name));\
     if (__coData->flags & CORO_FLAG_RESET) {\
         __coData->state = NULL;\
         __coData->flags &= ~(CORO_FLAG_RESET | CORO_FLAG_SUSPEND);\
@@ -44,7 +65,14 @@ struct COROData {
     __coSavePosition();\
     __coLabelPosition();
 
-#define CORO_Simple(ret...) static CORO_Define(__CORO); CORO_Init(__CORO, ##ret)
+
+#ifdef __CPP11__
+#  define CORO_Init(name, ret...) CORO_Init_Impl(COROData, name, ##ret)
+#  define CORO_Simple(ret...) static CORO_Define(__CORO); CORO_Init_Impl(COROData, __CORO, ##ret)
+#else
+#  define CORO_Init(name, ret...) CORO_Init_Impl(CORODataClass, name, ##ret)
+#  define CORO_Simple(ret...) static CORO_DefineStruct(__CORO); CORO_Init_Impl(COROData, __CORO, ##ret)
+#endif
 
 #define yield(val) do { __coData->flags &= ~CORO_FLAG_SUSPEND; __coSavePosition(); return val; __coLabelPosition(); } while(0)
 
