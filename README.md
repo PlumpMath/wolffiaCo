@@ -81,6 +81,66 @@ void loop() {
 }
 ```
 
+###### Locks example
+```C
+#include <coroutine.h>
+ 
+int led = 13;
+
+#define onLock  LOCK_1
+#define offLock LOCK_2
+
+void blink() {
+  CORO_Simple();
+
+  static long time = 0;
+
+  while(true) {
+    time=millis();
+    
+    lockRelease(onLock);
+    yieldUntil(millis() > time+1000);
+    
+    lockRelease(offLock);
+    yieldUntil(millis() > time+2000);
+  }
+}
+
+void blinkOn() {
+  CORO_Simple();
+  
+  while(true) {
+    lockWaitAndAcquire(onLock);
+
+    digitalWrite(led, HIGH);
+  }
+}
+
+void blinkOff() {
+  CORO_Simple();
+  
+  while(true) {
+    lockWaitAndAcquire(offLock);
+    
+    digitalWrite(led, LOW);
+  }
+}
+
+void setup() {                
+  pinMode(led, OUTPUT);    
+ 
+  lockAcquire(onLock); 
+  lockAcquire(offLock); 
+}
+
+// the loop routine runs over and over again forever:
+void loop() {  
+  blink();
+  blinkOn();
+  blinkOff();
+}
+```
+
 ### Installation
 
 ###### OS X
