@@ -108,10 +108,15 @@ Fibb fibb3;
 ///////////////////////////////////////////////////
 
 ///////////////////////////////////////////////////
+static char fibb4Controller = 0;
+
 int fibb4() {
-    CORO_Start
+    CORO_StartEx(fibb4Controller, -1);
     
-    static int a=1, b=0;
+    static int a, b;
+    
+    a=1;
+    b=0;
     
     while(true) {
         yield(a=a+b);
@@ -121,6 +126,7 @@ int fibb4() {
     CORO_Finish;
 }
 ///////////////////////////////////////////////////
+
 
 int main(int argc, const char * argv[])
 {
@@ -151,7 +157,19 @@ int main(int argc, const char * argv[])
     }
     printf("\n");
     printf("fibb4: ");
-    for(int i=0; i < 20; i++) {
+    for(int i=0; i < 10; i++) {
+        printf("%i ", fibb4());
+    }
+    for(int i=0; i < 10; i++) {
+        printf("%i ", fibb4());
+    }
+    printf("\n");
+    printf("fibb4_2: ");
+    fibb4Controller |= CORO_FLAG_RESET;
+    for(int i=0; i < 10; i++) {
+        printf("%i ", fibb4());
+    }
+    for(int i=0; i < 10; i++) {
         printf("%i ", fibb4());
     }
     printf("\n");

@@ -11,19 +11,38 @@
 
 #include <stddef.h>
 
+#define CORO_FLAG_FREEZE    0x01
+#define CORO_FLAG_RESET     0x02
+
 #define __coConcat(a,b) __coConcat2(a,b)
 #define __coConcat2(a,b) a##b
 
 #define __coLabelize() __coConcat(__coLabel, __LINE__)
 
-#define __coResumePosition if (__coState != NULL) { goto *__coState; }
+#define __coResumePosition() if (__coState != NULL) { goto *__coState; }
 #define __coLabelPosition() __coLabelize():
 #define __coSavePosition() __coState = &&__coLabelize()
 #define __coResetPosition() __coState = NULL;
 
 #define __coClassName(name) __coConcat(__co_class_, name)
 
-#define CORO_Start static void * __coState = NULL; __coResumePosition; __coSavePosition(); __coLabelPosition();
+#define CORO_Start\
+    static void * __coState = NULL;\
+    __coResumePosition();\
+    __coSavePosition();\
+    __coLabelPosition();
+
+#define CORO_StartEx(controller, ret...)\
+    static void * __coState = NULL;\
+    if (controller & CORO_FLAG_FREEZE) return ret;\
+    if (controller & CORO_FLAG_RESET) {\
+        __coState = NULL;\
+        controller &= ~CORO_FLAG_RESET;\
+    }\
+    __coResumePosition();\
+    __coSavePosition();\
+    __coLabelPosition();
+
 #define CORO_Finish __coResetPosition();
 
 #if __cplusplus >= 201103L
