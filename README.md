@@ -46,7 +46,7 @@ void loop() {
 
 ###### Class example
 
-```C++
+```Cpp
 #include <coroutine.h>
 
 int led = 13;
@@ -90,11 +90,18 @@ void loop() {
 
 ```bash
 $ cd ~/Documents/Arduino/libraries/
-$ git clone https://github.com/parkerkane/coroutine.h.git coroutine
+$ git clone https://github.com/parkerkane/wolffiaCo.git wolffiaCo
 ```
 
 ###### Linux
 TODO
 
 ###### Windows
-TODO
+
+```
+$ cd "My Documents\Arduino\libraries"
+$ git clone https://github.com/parkerkane/wolffiaCo.git wolffiaCo
+```
+
+More information about installing libraries can found from Arduino's [websites](http://arduino.cc/en/Guide/Libraries) or from [Adafruit](http://learn.adafruit.com/adafruit-all-about-arduino-libraries-install-use).
+
