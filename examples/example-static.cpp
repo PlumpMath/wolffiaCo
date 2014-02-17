@@ -6,41 +6,32 @@
 //  Copyright (c) 2014 Timo Reunanen. All rights reserved.
 //
 
-#include <coroutine.h>
+#include <coroutine.hpp>
 
 #ifdef FUNC1
-void func() {
-    CORO_Start
-    
-
-    
-    CORO_Finish
+CORO_Define(Func1)
+void func1() {
+    CORO_Init(Func1);
 }
 #endif
 
 #ifdef FUNC2
+CORO_Define(Func2)
 void func2() {
-    CORO_Start
-    
-    
-    
-    CORO_Finish
+    CORO_Init(Func2);
 }
 #endif
 
 #ifdef FUNC3
+CORO_Define(Func3)
 void func3() {
-    CORO_Start
-    
-    
-    
-    CORO_Finish
+    CORO_Init(Func3);
 }
 #endif
 
 int main(void) {
 #ifdef FUNC1
-    func();
+    func1();
 #endif
     
 #ifdef FUNC2

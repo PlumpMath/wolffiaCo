@@ -6,13 +6,16 @@
 //  Copyright (c) 2014 Timo Reunanen. All rights reserved.
 //
 
-#include "coroutine.h"
+#include <coroutine.hpp>
 
-CORO_Begin(func1)
-CORO_Method(void)
-{
+
+void func1() {
+    CORO_Simple();
 }
-CORO_End(func1, func2)
+
+void func2() {
+    CORO_Simple();
+}
 
 int main(void) {
     func1();

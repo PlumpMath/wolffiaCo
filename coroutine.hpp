@@ -11,12 +11,9 @@
 
 #include <stddef.h>
 
-class COROData {
-public:
+struct COROData {
     void *state;
     unsigned char flags;
-    
-    COROData() : state(NULL), flags(0) {}
 };
 
 #define CORO_FLAG_SUSPEND   0x01
@@ -29,11 +26,12 @@ public:
 
 #define __coName(name) __coConcat(__coVar_, name)
 
-#define __coResumePosition() if (coData->state != NULL) { goto *(coData->state); }
+#define __coResumePosition() if (__coData->state != NULL) { goto *(__coData->state); }
 #define __coLabelPosition() __coLabelize():
-#define __coSavePosition() coData->state = &&__coLabelize()
+#define __coSavePosition() __coData->state = &&__coLabelize()
 
-#define CORO_Define(name) COROData __coName(name);
+#define CORO_Define(name) struct COROData __coName(name) = { .state = NULL, .flags = 0};
+
 #define CORO_Init(name, ret...)\
     COROData *__coData = &(__coName(name));\
     if (__coData->flags & CORO_FLAG_RESET) {\
@@ -46,6 +44,7 @@ public:
     __coSavePosition();\
     __coLabelPosition();
 
+#define CORO_Simple(ret...) static CORO_Define(__CORO); CORO_Init(__CORO, ##ret)
 
 #define yield(val) do { __coData->flags &= ~CORO_FLAG_SUSPEND; __coSavePosition(); return val; __coLabelPosition(); } while(0)
 

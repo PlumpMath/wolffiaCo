@@ -6,12 +6,15 @@
 //  Copyright (c) 2014 Timo Reunanen. All rights reserved.
 //
 
-#include <coroutine.h>
+#include <coroutine.hpp>
 
-CORO_BeginClass(Func)
-CORO_Method(void){
-}
-CORO_EndClass()
+class Func {
+public:
+    CORO_Define(Test);
+    void operator()() {
+        CORO_Init(Test);
+    }
+};
 
 #ifdef FUNC1
 Func func1;
