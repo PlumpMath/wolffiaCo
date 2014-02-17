@@ -18,7 +18,7 @@ Arduino IDE
 int led = 13;
 
 void blink() {
-  CORO_Start
+  CORO_Simple();
 
   static long time = 0;
 
@@ -31,8 +31,6 @@ void blink() {
     digitalWrite(led, LOW);
     yieldUntil(millis() > time+2000);
   }
-  
-  CORO_Finish
 }
 
 void setup() {                
@@ -57,8 +55,9 @@ public:
 
   Blink() : time(0) {}
 
+  CORO_Define(Blink);
   void operator()() {
-    CORO_Start
+    CORO_Init(Blink);
 
     time = millis();
 
@@ -69,8 +68,6 @@ public:
       digitalWrite(led, LOW);
       yieldUntil(millis() > time+2000);
     }
-  
-    CORO_Finish
   }
 };
 Blink blink;
