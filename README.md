@@ -87,7 +87,7 @@ void loop() {
 
 ```bash
 $ cd ~/Documents/Arduino/libraries/
-$ git clone https://github.com/parkerkane/wolffiaCo.git wolffiaCo
+$ git clone https://github.com/parkerkane/wolffiaCo.git
 ```
 
 ###### Linux
@@ -97,7 +97,7 @@ TODO
 
 ```
 $ cd "My Documents\Arduino\libraries"
-$ git clone https://github.com/parkerkane/wolffiaCo.git wolffiaCo
+$ git clone https://github.com/parkerkane/wolffiaCo.git
 ```
 
 More information about installing libraries can found from Arduino's [websites](http://arduino.cc/en/Guide/Libraries) or from [Adafruit](http://learn.adafruit.com/adafruit-all-about-arduino-libraries-install-use).
