@@ -13,6 +13,10 @@
 #define __CPP11__
 #endif
 
+#ifndef __cplusplus
+#define __C__
+#endif
+
 #include <stddef.h>
 
 struct COROData {
@@ -46,7 +50,7 @@ public:
 #define __coLabelPosition() __coLabelize():
 #define __coSavePosition() __coData->state = &&__coLabelize()
 
-#ifdef __CPP11__
+#if defined(__CPP11__) || defined(__C__)
 # define CORO_Define(name) struct COROData __coName(name) = { .state = NULL, .flags = 0};
 #else
 # define CORO_Define(name) CORODataClass __coName(name);
@@ -66,7 +70,7 @@ public:
     __coLabelPosition();
 
 
-#ifdef __CPP11__
+#if defined(__CPP11__) || defined(__C__)
 #  define CORO_Init(name, ret...) CORO_Init_Impl(COROData, name, ##ret)
 #  define CORO_Simple(ret...) static CORO_Define(__CORO); CORO_Init_Impl(COROData, __CORO, ##ret)
 #else
