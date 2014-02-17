@@ -1,9 +1,9 @@
-#CFLAGS=-O3 -std=c++11 -I.
-CFLAGS=-O3 -I.
+CFLAGS=-O3 -std=c++11 -I.
+#CFLAGS=-O3 -I.
 
 all: example
 
-example: examples/example.cpp coroutine.hpp Makefile
+example: examples/example.cpp coroutine.h Makefile
 	g++ $(CFLAGS) -o example examples/example.cpp
 
 ## just for checking size
