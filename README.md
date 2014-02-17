@@ -1,7 +1,9 @@
 wolffiaCo
 =========
 
-wolffiaCo is simple coroutine based aka non preemptive task scheduler library for tiny devices e.g. Attiny85.
+Simple coroutine based non preemptive task scheduler library for tiny devices e.g. [Atmel's Attiny](http://www.atmel.com/products/microcontrollers/avr/tinyavr.aspx) family.
+
+wolffiaCo name comes from [wolffia](http://en.wikipedia.org/wiki/Wolffia) which is genus which includes smallest flowering plants on Earth.
 
 Based on [ProtoThreads](http://dunkels.com/adam/pt/) by Adam Dunkels and uses [Label as Values](http://gcc.gnu.org/onlinedocs/gcc/Labels-as-Values.html) extension. 
 
@@ -44,7 +46,7 @@ void loop() {
 
 ###### Class example
 
-```C++
+```Cpp
 #include <coroutine.h>
 
 int led = 13;
@@ -88,11 +90,18 @@ void loop() {
 
 ```bash
 $ cd ~/Documents/Arduino/libraries/
-$ git clone https://github.com/parkerkane/coroutine.h.git coroutine
+$ git clone https://github.com/parkerkane/wolffiaCo.git wolffiaCo
 ```
 
 ###### Linux
 TODO
 
 ###### Windows
-TODO
+
+```
+$ cd "My Documents\Arduino\libraries"
+$ git clone https://github.com/parkerkane/wolffiaCo.git wolffiaCo
+```
+
+More information about installing libraries can found from Arduino's [websites](http://arduino.cc/en/Guide/Libraries) or from [Adafruit](http://learn.adafruit.com/adafruit-all-about-arduino-libraries-install-use).
+
