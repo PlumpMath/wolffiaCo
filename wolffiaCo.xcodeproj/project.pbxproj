@@ -13,14 +13,17 @@
 		2341E87F18B2F9FC005C29B7 /* fizzbuzz.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2341E87D18B2F9FC005C29B7 /* fizzbuzz.cpp */; };
 		2341E88018B2F9FC005C29B7 /* fizzbuzz.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2341E87D18B2F9FC005C29B7 /* fizzbuzz.cpp */; };
 		2377EE0F18AF9F0B0045026E /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = 23B9B06B18AF9D1B008E2250 /* Makefile */; };
-		2377EE2818AFF59D0045026E /* coroutine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2377EE2718AFF59D0045026E /* coroutine.cpp */; };
-		2377EE2918AFF59D0045026E /* coroutine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2377EE2718AFF59D0045026E /* coroutine.cpp */; };
 		2377EE3118B000690045026E /* example-class.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2377EE2C18B000690045026E /* example-class.cpp */; };
 		2377EE3318B000690045026E /* example-simple.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2377EE2D18B000690045026E /* example-simple.cpp */; };
 		2377EE3518B000690045026E /* example-static.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2377EE2E18B000690045026E /* example-static.cpp */; };
 		23B9B07318AF9DD9008E2250 /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = 23B9B06B18AF9D1B008E2250 /* Makefile */; };
-		23DBDD4118B1CD0E002E8717 /* coroutine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2377EE2718AFF59D0045026E /* coroutine.cpp */; };
 		23DBDD4218B1CD0E002E8717 /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = 23B9B06B18AF9D1B008E2250 /* Makefile */; };
+		23F62C6D18B38CDA00E06AAC /* coroutine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23F62C6B18B38CDA00E06AAC /* coroutine.cpp */; };
+		23F62C6E18B38CDA00E06AAC /* coroutine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23F62C6B18B38CDA00E06AAC /* coroutine.cpp */; };
+		23F62C6F18B38CDA00E06AAC /* coroutine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23F62C6B18B38CDA00E06AAC /* coroutine.cpp */; };
+		23F62C7018B38CDA00E06AAC /* wolffia.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23F62C6C18B38CDA00E06AAC /* wolffia.cpp */; };
+		23F62C7118B38CDA00E06AAC /* wolffia.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23F62C6C18B38CDA00E06AAC /* wolffia.cpp */; };
+		23F62C7218B38CDA00E06AAC /* wolffia.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23F62C6C18B38CDA00E06AAC /* wolffia.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -56,12 +59,10 @@
 /* Begin PBXFileReference section */
 		2341E86E18B1CEED005C29B7 /* maintest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = maintest.cpp; sourceTree = "<group>"; };
 		2341E86F18B1CEED005C29B7 /* maintest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = maintest.h; sourceTree = "<group>"; };
-		2341E87218B23F4C005C29B7 /* coroutine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = coroutine.h; sourceTree = "<group>"; };
 		2341E87618B25AF7005C29B7 /* example.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = example.cpp; path = examples/example.cpp; sourceTree = "<group>"; };
 		2341E87D18B2F9FC005C29B7 /* fizzbuzz.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = fizzbuzz.cpp; path = examples/fizzbuzz.cpp; sourceTree = "<group>"; };
 		2341E87E18B2F9FC005C29B7 /* fizzbuzz.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = fizzbuzz.h; path = examples/fizzbuzz.h; sourceTree = "<group>"; };
 		2377EE1718AF9F250045026E /* index */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = index; sourceTree = BUILT_PRODUCTS_DIR; };
-		2377EE2718AFF59D0045026E /* coroutine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = coroutine.cpp; sourceTree = "<group>"; };
 		2377EE2C18B000690045026E /* example-class.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "example-class.cpp"; path = "examples/example-class.cpp"; sourceTree = "<group>"; };
 		2377EE2D18B000690045026E /* example-simple.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "example-simple.cpp"; path = "examples/example-simple.cpp"; sourceTree = "<group>"; };
 		2377EE2E18B000690045026E /* example-static.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "example-static.cpp"; path = "examples/example-static.cpp"; sourceTree = "<group>"; };
@@ -69,6 +70,10 @@
 		23B9B06C18AF9D1B008E2250 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		23B9B07A18AF9DD9008E2250 /* example */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = example; sourceTree = BUILT_PRODUCTS_DIR; };
 		23DBDD4918B1CD0E002E8717 /* Tests */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Tests; sourceTree = BUILT_PRODUCTS_DIR; };
+		23F62C6818B38CDA00E06AAC /* coroutine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = coroutine.h; sourceTree = "<group>"; };
+		23F62C6918B38CDA00E06AAC /* wolffia.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wolffia.h; sourceTree = "<group>"; };
+		23F62C6B18B38CDA00E06AAC /* coroutine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = coroutine.cpp; sourceTree = "<group>"; };
+		23F62C6C18B38CDA00E06AAC /* wolffia.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = wolffia.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,8 +104,8 @@
 		23B9B05318AF9CBA008E2250 = {
 			isa = PBXGroup;
 			children = (
-				2377EE2718AFF59D0045026E /* coroutine.cpp */,
-				2341E87218B23F4C005C29B7 /* coroutine.h */,
+				23F62C6A18B38CDA00E06AAC /* src */,
+				23F62C6718B38CDA00E06AAC /* include */,
 				23B9B06B18AF9D1B008E2250 /* Makefile */,
 				23B9B06C18AF9D1B008E2250 /* README.md */,
 				23DBDD3918B1CCB9002E8717 /* tests */,
@@ -139,6 +144,24 @@
 				2341E86F18B1CEED005C29B7 /* maintest.h */,
 			);
 			path = tests;
+			sourceTree = "<group>";
+		};
+		23F62C6718B38CDA00E06AAC /* include */ = {
+			isa = PBXGroup;
+			children = (
+				23F62C6818B38CDA00E06AAC /* coroutine.h */,
+				23F62C6918B38CDA00E06AAC /* wolffia.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		23F62C6A18B38CDA00E06AAC /* src */ = {
+			isa = PBXGroup;
+			children = (
+				23F62C6B18B38CDA00E06AAC /* coroutine.cpp */,
+				23F62C6C18B38CDA00E06AAC /* wolffia.cpp */,
+			);
+			path = src;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,8 +253,9 @@
 			files = (
 				2341E87818B25AF7005C29B7 /* example.cpp in Sources */,
 				2377EE3118B000690045026E /* example-class.cpp in Sources */,
+				23F62C6F18B38CDA00E06AAC /* coroutine.cpp in Sources */,
 				2377EE3518B000690045026E /* example-static.cpp in Sources */,
-				2377EE2918AFF59D0045026E /* coroutine.cpp in Sources */,
+				23F62C7218B38CDA00E06AAC /* wolffia.cpp in Sources */,
 				2377EE3318B000690045026E /* example-simple.cpp in Sources */,
 				2341E88018B2F9FC005C29B7 /* fizzbuzz.cpp in Sources */,
 				2377EE0F18AF9F0B0045026E /* Makefile in Sources */,
@@ -243,9 +267,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				2341E87718B25AF7005C29B7 /* example.cpp in Sources */,
-				2377EE2818AFF59D0045026E /* coroutine.cpp in Sources */,
 				23B9B07318AF9DD9008E2250 /* Makefile in Sources */,
+				23F62C6D18B38CDA00E06AAC /* coroutine.cpp in Sources */,
 				2341E87F18B2F9FC005C29B7 /* fizzbuzz.cpp in Sources */,
+				23F62C7018B38CDA00E06AAC /* wolffia.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,9 +278,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				23DBDD4118B1CD0E002E8717 /* coroutine.cpp in Sources */,
+				23F62C7118B38CDA00E06AAC /* wolffia.cpp in Sources */,
 				23DBDD4218B1CD0E002E8717 /* Makefile in Sources */,
 				2341E87018B1CEED005C29B7 /* maintest.cpp in Sources */,
+				23F62C6E18B38CDA00E06AAC /* coroutine.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,6 +373,11 @@
 		23B9B07818AF9DD9008E2250 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					include,
+				);
 				PRODUCT_NAME = example;
 			};
 			name = Debug;
@@ -354,6 +385,11 @@
 		23B9B07918AF9DD9008E2250 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					include,
+				);
 				PRODUCT_NAME = example;
 			};
 			name = Release;
@@ -361,6 +397,11 @@
 		23DBDD4718B1CD0E002E8717 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					include,
+				);
 				PRODUCT_NAME = Tests;
 			};
 			name = Debug;
@@ -368,6 +409,11 @@
 		23DBDD4818B1CD0E002E8717 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					include,
+				);
 				PRODUCT_NAME = Tests;
 			};
 			name = Release;

@@ -1,14 +1,14 @@
-CFLAGS=-O3 -std=c++11 -I.
-#CFLAGS=-O3 -I.
+CFLAGS=-O3 -std=c++11 -I./include
+#CFLAGS=-O3 -I./include
 
 all: example
 
-example: examples/example.cpp coroutine.h Makefile examples/fizzbuzz.cpp examples/fizzbuzz.h
-	g++ $(CFLAGS) -o example examples/example.cpp examples/fizzbuzz.cpp
+example: examples/example.cpp include/coroutine.h src/coroutine.cpp Makefile examples/fizzbuzz.cpp examples/fizzbuzz.h src/wolffia.cpp include/wolffia.h
+	g++ $(CFLAGS) -o example examples/example.cpp examples/fizzbuzz.cpp src/coroutine.cpp
 
 ## just for checking size
 avr:
-	avr-g++ $(CFLAGS) -o example.avr examples/example.cpp coroutine.cpp examples/fizzbuzz.cpp
+	avr-g++ $(CFLAGS) -o example.avr examples/example.cpp src/coroutine.cpp examples/fizzbuzz.cpp src/wolffia.cpp
 
 	avr-g++ $(CFLAGS) -o example-simple.avr examples/example-simple.cpp
 
@@ -26,8 +26,8 @@ avr:
 
 	avr-size -C --mcu=attiny85 example.avr
 
-test: Makefile tests/maintest.cpp coroutine.cpp coroutine.h
-	g++ -I. -o test tests/maintest.cpp coroutine.cpp
+test: Makefile tests/maintest.cpp src/coroutine.cpp include/coroutine.h src/wolffia.cpp include/wolffia.h
+	g++ -I. -o test tests/maintest.cpp src/coroutine.cpp src/wolffia.cpp
 	./test
 
 	g++ -I. -std=c++11 -o test-c11 tests/maintest.cpp coroutine.cpp
