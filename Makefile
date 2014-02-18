@@ -8,7 +8,7 @@ example: examples/example.cpp coroutine.h Makefile examples/fizzbuzz.cpp example
 
 ## just for checking size
 avr:
-	avr-g++ $(CFLAGS) -o example.avr examples/example.cpp coroutine.cpp
+	avr-g++ $(CFLAGS) -o example.avr examples/example.cpp coroutine.cpp examples/fizzbuzz.cpp
 
 	avr-g++ $(CFLAGS) -o example-simple.avr examples/example-simple.cpp
 
@@ -22,7 +22,7 @@ avr:
 	avr-g++ $(CFLAGS) -o example-class-2_funcs.avr examples/example-class.cpp -DFUNC1 -DFUNC2
 	avr-g++ $(CFLAGS) -o example-class-3_funcs.avr examples/example-class.cpp -DFUNC1 -DFUNC2 -DFUNC3
 
-	avr-size -B --mcu=attiny85 example-class-*.avr example-static-*.avr
+	avr-size -B --mcu=attiny85 example-simple.avr example-class-*.avr example-static-*.avr
 
 	avr-size -C --mcu=attiny85 example.avr
 
