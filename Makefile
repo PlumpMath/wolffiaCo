@@ -26,5 +26,12 @@ avr:
 
 	avr-size -C --mcu=attiny85 example.avr
 
+test: Makefile tests/maintest.cpp coroutine.cpp coroutine.h
+	g++ -I. -o test tests/maintest.cpp coroutine.cpp
+	./test
+
+	g++ -I. -std=c++11 -o test-c11 tests/maintest.cpp coroutine.cpp
+	./test-c11
+
 clean:
-	rm -rf example *.avr
+	rm -rf example *.avr test test-c11

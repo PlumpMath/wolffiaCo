@@ -58,3 +58,5 @@ build
 
 *.avr
 example
+test
+test-c11

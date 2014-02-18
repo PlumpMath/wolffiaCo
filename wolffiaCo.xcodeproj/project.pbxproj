@@ -19,8 +19,6 @@
 		23B9B07318AF9DD9008E2250 /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = 23B9B06B18AF9D1B008E2250 /* Makefile */; };
 		23DBDD4118B1CD0E002E8717 /* coroutine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2377EE2718AFF59D0045026E /* coroutine.cpp */; };
 		23DBDD4218B1CD0E002E8717 /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = 23B9B06B18AF9D1B008E2250 /* Makefile */; };
-		23DBDD4A18B1CD7F002E8717 /* tap.c in Sources */ = {isa = PBXBuildFile; fileRef = 23DBDD3A18B1CCB9002E8717 /* tap.c */; };
-		23DBDD4B18B1CD7F002E8717 /* tap.h in Sources */ = {isa = PBXBuildFile; fileRef = 23DBDD3B18B1CCB9002E8717 /* tap.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -66,8 +64,6 @@
 		23B9B06B18AF9D1B008E2250 /* Makefile */ = {isa = PBXFileReference; explicitFileType = sourcecode.make; fileEncoding = 4; path = Makefile; sourceTree = "<group>"; usesTabs = 1; };
 		23B9B06C18AF9D1B008E2250 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		23B9B07A18AF9DD9008E2250 /* example */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = example; sourceTree = BUILT_PRODUCTS_DIR; };
-		23DBDD3A18B1CCB9002E8717 /* tap.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tap.c; sourceTree = "<group>"; };
-		23DBDD3B18B1CCB9002E8717 /* tap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tap.h; sourceTree = "<group>"; };
 		23DBDD4918B1CD0E002E8717 /* Tests */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Tests; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -133,8 +129,6 @@
 		23DBDD3918B1CCB9002E8717 /* tests */ = {
 			isa = PBXGroup;
 			children = (
-				23DBDD3A18B1CCB9002E8717 /* tap.c */,
-				23DBDD3B18B1CCB9002E8717 /* tap.h */,
 				2341E86E18B1CEED005C29B7 /* maintest.cpp */,
 				2341E86F18B1CEED005C29B7 /* maintest.h */,
 			);
@@ -229,8 +223,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2341E87818B25AF7005C29B7 /* example.cpp in Sources */,
-				23DBDD4A18B1CD7F002E8717 /* tap.c in Sources */,
-				23DBDD4B18B1CD7F002E8717 /* tap.h in Sources */,
 				2377EE3118B000690045026E /* example-class.cpp in Sources */,
 				2377EE3518B000690045026E /* example-static.cpp in Sources */,
 				2377EE2918AFF59D0045026E /* coroutine.cpp in Sources */,
