@@ -2,13 +2,33 @@
 //  example.cpp
 //  wolffiaCo
 //
-//  Created by Parker Kane on 17/02/2014.
-//  Copyright (c) 2014 Parker Kane. All rights reserved.
+//  Created by Timo Reunanen on 17/02/2014.
+//  Copyright (c) 2014 Timo Reunanen. All rights reserved.
 //
 
 #include <stdio.h>
 
 #include "coroutine.h"
+
+int odd() {
+    CORO_Simple(-1);
+    
+    static int v = -1;
+    
+    while(true) {
+        yield(v+=2);
+    }
+}
+
+int even() {
+    CORO_Simple(-1);
+    
+    static int v = 0;
+    
+    while(true) {
+        yield(v+=2);
+    }
+}
 
 CORO_Define(Fibb)
 int fibb() {
@@ -58,6 +78,11 @@ Fibb fibb3, fibb4;
 
 int main(void) {
  
+    for(int i=0; i < 10; i++) {
+        printf("%i ", odd());
+        printf("%i ", even());
+    }
+    printf("\n");
     for(int i=0; i < 20; i++) {
         printf("%i ", fibb());
     }

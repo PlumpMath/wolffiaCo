@@ -2,8 +2,8 @@
 //  maintest.cpp
 //  wolffiaCo
 //
-//  Created by Parker Kane on 17/02/2014.
-//  Copyright (c) 2014 Parker Kane. All rights reserved.
+//  Created by Timo Reunanen on 17/02/2014.
+//  Copyright (c) 2014 Timo Reunanen. All rights reserved.
 //
 
 #include "coroutine.h"

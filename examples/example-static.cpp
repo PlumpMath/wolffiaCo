@@ -1,6 +1,6 @@
 //
 //  example-static.cpp
-//  coroutine
+//  wolffiaCo
 //
 //  Created by Timo Reunanen on 15/02/2014.
 //  Copyright (c) 2014 Timo Reunanen. All rights reserved.
