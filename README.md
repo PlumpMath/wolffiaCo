@@ -1,7 +1,7 @@
 wolffiaCo
 =========
 
-Simple coroutine based non preemptive task scheduler library for tiny devices e.g. [Atmel's Attiny](http://www.atmel.com/products/microcontrollers/avr/tinyavr.aspx) family.
+Simple stackless coroutine based non preemptive task scheduler library for tiny devices e.g. [Atmel's Attiny](http://www.atmel.com/products/microcontrollers/avr/tinyavr.aspx) family.
 
 wolffiaCo name comes from [wolffia](http://en.wikipedia.org/wiki/Wolffia) which is genus which includes smallest flowering plants on Earth.
 

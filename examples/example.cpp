@@ -9,6 +9,7 @@
 #include <stdio.h>
 
 #include "coroutine.h"
+#include "fizzbuzz.h"
 
 int odd() {
     CORO_Simple(-1);
@@ -32,7 +33,7 @@ int even() {
 
 CORO_Define(Fibb)
 int fibb() {
-    
+    // Initialize Coroutine
     CORO_Init(Fibb, -1);
     
     static int a, b;
@@ -61,8 +62,10 @@ class Fibb {
 public:
     int a,b;
     
+    // Define attributes for Fibb coroutine.
     CORO_Define(Fibb)
     int operator()() {
+        // Initialize Coroutine
         CORO_Init(Fibb, -1);
         
         a = 1;
@@ -75,6 +78,8 @@ public:
     }
 };
 Fibb fibb3, fibb4;
+
+FizzBuzz fizzbuzz;
 
 int main(void) {
  
@@ -98,7 +103,12 @@ int main(void) {
     for(int i=0; i < 20; i++) {
         printf("%i ", fibb4());
     }
-    printf("\n");
+    printf("\n\n");
+    for(int i=1; i < 40; i++) {
+        fizzbuzz(i);
+    }
+    printf("\n\n");
+    fizzbuzz.stats();
     
     return 0;
 }

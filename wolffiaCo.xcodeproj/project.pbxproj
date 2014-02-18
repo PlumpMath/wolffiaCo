@@ -10,6 +10,8 @@
 		2341E87018B1CEED005C29B7 /* maintest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2341E86E18B1CEED005C29B7 /* maintest.cpp */; };
 		2341E87718B25AF7005C29B7 /* example.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2341E87618B25AF7005C29B7 /* example.cpp */; };
 		2341E87818B25AF7005C29B7 /* example.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2341E87618B25AF7005C29B7 /* example.cpp */; };
+		2341E87F18B2F9FC005C29B7 /* fizzbuzz.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2341E87D18B2F9FC005C29B7 /* fizzbuzz.cpp */; };
+		2341E88018B2F9FC005C29B7 /* fizzbuzz.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2341E87D18B2F9FC005C29B7 /* fizzbuzz.cpp */; };
 		2377EE0F18AF9F0B0045026E /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = 23B9B06B18AF9D1B008E2250 /* Makefile */; };
 		2377EE2818AFF59D0045026E /* coroutine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2377EE2718AFF59D0045026E /* coroutine.cpp */; };
 		2377EE2918AFF59D0045026E /* coroutine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2377EE2718AFF59D0045026E /* coroutine.cpp */; };
@@ -56,6 +58,8 @@
 		2341E86F18B1CEED005C29B7 /* maintest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = maintest.h; sourceTree = "<group>"; };
 		2341E87218B23F4C005C29B7 /* coroutine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = coroutine.h; sourceTree = "<group>"; };
 		2341E87618B25AF7005C29B7 /* example.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = example.cpp; path = examples/example.cpp; sourceTree = "<group>"; };
+		2341E87D18B2F9FC005C29B7 /* fizzbuzz.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = fizzbuzz.cpp; path = examples/fizzbuzz.cpp; sourceTree = "<group>"; };
+		2341E87E18B2F9FC005C29B7 /* fizzbuzz.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = fizzbuzz.h; path = examples/fizzbuzz.h; sourceTree = "<group>"; };
 		2377EE1718AF9F250045026E /* index */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = index; sourceTree = BUILT_PRODUCTS_DIR; };
 		2377EE2718AFF59D0045026E /* coroutine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = coroutine.cpp; sourceTree = "<group>"; };
 		2377EE2C18B000690045026E /* example-class.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "example-class.cpp"; path = "examples/example-class.cpp"; sourceTree = "<group>"; };
@@ -118,6 +122,8 @@
 		23B9B07C18AF9E5F008E2250 /* Examples */ = {
 			isa = PBXGroup;
 			children = (
+				2341E87D18B2F9FC005C29B7 /* fizzbuzz.cpp */,
+				2341E87E18B2F9FC005C29B7 /* fizzbuzz.h */,
 				2341E87618B25AF7005C29B7 /* example.cpp */,
 				2377EE2C18B000690045026E /* example-class.cpp */,
 				2377EE2D18B000690045026E /* example-simple.cpp */,
@@ -227,6 +233,7 @@
 				2377EE3518B000690045026E /* example-static.cpp in Sources */,
 				2377EE2918AFF59D0045026E /* coroutine.cpp in Sources */,
 				2377EE3318B000690045026E /* example-simple.cpp in Sources */,
+				2341E88018B2F9FC005C29B7 /* fizzbuzz.cpp in Sources */,
 				2377EE0F18AF9F0B0045026E /* Makefile in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -238,6 +245,7 @@
 				2341E87718B25AF7005C29B7 /* example.cpp in Sources */,
 				2377EE2818AFF59D0045026E /* coroutine.cpp in Sources */,
 				23B9B07318AF9DD9008E2250 /* Makefile in Sources */,
+				2341E87F18B2F9FC005C29B7 /* fizzbuzz.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

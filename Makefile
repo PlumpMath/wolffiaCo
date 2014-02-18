@@ -3,8 +3,8 @@ CFLAGS=-O3 -std=c++11 -I.
 
 all: example
 
-example: examples/example.cpp coroutine.h Makefile
-	g++ $(CFLAGS) -o example examples/example.cpp
+example: examples/example.cpp coroutine.h Makefile examples/fizzbuzz.cpp examples/fizzbuzz.h
+	g++ $(CFLAGS) -o example examples/example.cpp examples/fizzbuzz.cpp
 
 ## just for checking size
 avr:
