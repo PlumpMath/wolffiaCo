@@ -19,21 +19,22 @@ public:
     
     // Define attributes for Runner coroutine.
     CORO_Define(Runner);
-    void operator()(int counter);
+    void operator()();
     
     void stats();
     
 private:
     
-    int fizzCount, buzzCount, counterCount;
+    int fizzCount, buzzCount, counterCount, counter;
+    bool first;
     
     // Define attributes for Fizz coroutine.
     CORO_Define(Fizz);
-    bool fizz(int counter);
+    bool fizz();
     
     // Define attributes for Buzz coroutine.
     CORO_Define(Buzz);
-    bool buzz(int counter);
+    bool buzz();
 };
 
 #endif /* defined(__wolffiaCo__fizzbuzz__) */

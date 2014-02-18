@@ -104,8 +104,8 @@ int main(void) {
         printf("%i ", fibb4());
     }
     printf("\n\n");
-    for(int i=1; i < 40; i++) {
-        fizzbuzz(i);
+    for(int i=0; i < 40; i++) {
+        fizzbuzz();
     }
     printf("\n\n");
     fizzbuzz.stats();
