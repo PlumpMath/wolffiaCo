@@ -35,7 +35,7 @@ void FizzBuzz::operator()() {
         }
         first = false;
         
-        // Test if it's fizz or buzz
+        // Test if it's fizz and/or buzz
         flag = fizz() | buzz();
         
         // Because it was not either fizz or buzz we show counter
