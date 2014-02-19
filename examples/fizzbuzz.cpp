@@ -45,6 +45,7 @@ void FizzBuzz::operator()() {
             counterCount++;
         }
         
+        // We are done for now, so back to upper loop
         yield();
     }
 }
