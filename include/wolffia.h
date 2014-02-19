@@ -16,6 +16,8 @@
 
 #include "wolffia-task.h"
 
+#define WO_Run() __woRun()
+
 extern COROData *CORO_Name(currentCoroData);
 
 #endif

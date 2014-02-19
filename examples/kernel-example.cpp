@@ -4,11 +4,11 @@
 //////////////////////////////////////////////////////////////////
 // Setup wollfia tasks
 
-#define WO_TASK1 fizzbuzz
-#define WO_TASK2 fizz
-#define WO_TASK3 buzz
+#define WO_TASK1 fizzbuzz()
+#define WO_TASK2 fizz()
+#define WO_TASK3 buzz()
 
-#define WO_TASK99 sleep
+#define WO_TASK30 sleep()
 
 #include <wolffia.h>
 
@@ -75,12 +75,11 @@ void setup() {
 }
 
 void loop() {
-    WO_RunOS();
+    WO_Run();
 }
 
 #ifndef ARDUINO
 int main(void) {
-    
     setup();
     
     while (true) {

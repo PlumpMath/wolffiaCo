@@ -4,18 +4,9 @@
  */
 
 
-#ifdef WO_TASK0
-#define __woSetupTask0 __woSetupTask(WO_0);
-#define __woRunTask0 __woRunTask(WO_TASK0, WO_0);
-#else
-#define __woSetupTask0
-#define __woRunTask0
-#endif
-
-
 #ifdef WO_TASK1
 #define __woSetupTask1 __woSetupTask(WO_1);
-#define __woRunTask1 __woRunTask(WO_TASK1, WO_1);
+#define __woRunTask1 __woRunTask(WO_1, WO_TASK1);
 #else
 #define __woSetupTask1
 #define __woRunTask1
@@ -24,7 +15,7 @@
 
 #ifdef WO_TASK2
 #define __woSetupTask2 __woSetupTask(WO_2);
-#define __woRunTask2 __woRunTask(WO_TASK2, WO_2);
+#define __woRunTask2 __woRunTask(WO_2, WO_TASK2);
 #else
 #define __woSetupTask2
 #define __woRunTask2
@@ -33,7 +24,7 @@
 
 #ifdef WO_TASK3
 #define __woSetupTask3 __woSetupTask(WO_3);
-#define __woRunTask3 __woRunTask(WO_TASK3, WO_3);
+#define __woRunTask3 __woRunTask(WO_3, WO_TASK3);
 #else
 #define __woSetupTask3
 #define __woRunTask3
@@ -42,7 +33,7 @@
 
 #ifdef WO_TASK4
 #define __woSetupTask4 __woSetupTask(WO_4);
-#define __woRunTask4 __woRunTask(WO_TASK4, WO_4);
+#define __woRunTask4 __woRunTask(WO_4, WO_TASK4);
 #else
 #define __woSetupTask4
 #define __woRunTask4
@@ -51,7 +42,7 @@
 
 #ifdef WO_TASK5
 #define __woSetupTask5 __woSetupTask(WO_5);
-#define __woRunTask5 __woRunTask(WO_TASK5, WO_5);
+#define __woRunTask5 __woRunTask(WO_5, WO_TASK5);
 #else
 #define __woSetupTask5
 #define __woRunTask5
@@ -60,7 +51,7 @@
 
 #ifdef WO_TASK6
 #define __woSetupTask6 __woSetupTask(WO_6);
-#define __woRunTask6 __woRunTask(WO_TASK6, WO_6);
+#define __woRunTask6 __woRunTask(WO_6, WO_TASK6);
 #else
 #define __woSetupTask6
 #define __woRunTask6
@@ -69,7 +60,7 @@
 
 #ifdef WO_TASK7
 #define __woSetupTask7 __woSetupTask(WO_7);
-#define __woRunTask7 __woRunTask(WO_TASK7, WO_7);
+#define __woRunTask7 __woRunTask(WO_7, WO_TASK7);
 #else
 #define __woSetupTask7
 #define __woRunTask7
@@ -78,7 +69,7 @@
 
 #ifdef WO_TASK8
 #define __woSetupTask8 __woSetupTask(WO_8);
-#define __woRunTask8 __woRunTask(WO_TASK8, WO_8);
+#define __woRunTask8 __woRunTask(WO_8, WO_TASK8);
 #else
 #define __woSetupTask8
 #define __woRunTask8
@@ -87,7 +78,7 @@
 
 #ifdef WO_TASK9
 #define __woSetupTask9 __woSetupTask(WO_9);
-#define __woRunTask9 __woRunTask(WO_TASK9, WO_9);
+#define __woRunTask9 __woRunTask(WO_9, WO_TASK9);
 #else
 #define __woSetupTask9
 #define __woRunTask9
@@ -96,7 +87,7 @@
 
 #ifdef WO_TASK10
 #define __woSetupTask10 __woSetupTask(WO_10);
-#define __woRunTask10 __woRunTask(WO_TASK10, WO_10);
+#define __woRunTask10 __woRunTask(WO_10, WO_TASK10);
 #else
 #define __woSetupTask10
 #define __woRunTask10
@@ -105,7 +96,7 @@
 
 #ifdef WO_TASK11
 #define __woSetupTask11 __woSetupTask(WO_11);
-#define __woRunTask11 __woRunTask(WO_TASK11, WO_11);
+#define __woRunTask11 __woRunTask(WO_11, WO_TASK11);
 #else
 #define __woSetupTask11
 #define __woRunTask11
@@ -114,7 +105,7 @@
 
 #ifdef WO_TASK12
 #define __woSetupTask12 __woSetupTask(WO_12);
-#define __woRunTask12 __woRunTask(WO_TASK12, WO_12);
+#define __woRunTask12 __woRunTask(WO_12, WO_TASK12);
 #else
 #define __woSetupTask12
 #define __woRunTask12
@@ -123,7 +114,7 @@
 
 #ifdef WO_TASK13
 #define __woSetupTask13 __woSetupTask(WO_13);
-#define __woRunTask13 __woRunTask(WO_TASK13, WO_13);
+#define __woRunTask13 __woRunTask(WO_13, WO_TASK13);
 #else
 #define __woSetupTask13
 #define __woRunTask13
@@ -132,7 +123,7 @@
 
 #ifdef WO_TASK14
 #define __woSetupTask14 __woSetupTask(WO_14);
-#define __woRunTask14 __woRunTask(WO_TASK14, WO_14);
+#define __woRunTask14 __woRunTask(WO_14, WO_TASK14);
 #else
 #define __woSetupTask14
 #define __woRunTask14
@@ -141,7 +132,7 @@
 
 #ifdef WO_TASK15
 #define __woSetupTask15 __woSetupTask(WO_15);
-#define __woRunTask15 __woRunTask(WO_TASK15, WO_15);
+#define __woRunTask15 __woRunTask(WO_15, WO_TASK15);
 #else
 #define __woSetupTask15
 #define __woRunTask15
@@ -150,7 +141,7 @@
 
 #ifdef WO_TASK16
 #define __woSetupTask16 __woSetupTask(WO_16);
-#define __woRunTask16 __woRunTask(WO_TASK16, WO_16);
+#define __woRunTask16 __woRunTask(WO_16, WO_TASK16);
 #else
 #define __woSetupTask16
 #define __woRunTask16
@@ -159,7 +150,7 @@
 
 #ifdef WO_TASK17
 #define __woSetupTask17 __woSetupTask(WO_17);
-#define __woRunTask17 __woRunTask(WO_TASK17, WO_17);
+#define __woRunTask17 __woRunTask(WO_17, WO_TASK17);
 #else
 #define __woSetupTask17
 #define __woRunTask17
@@ -168,7 +159,7 @@
 
 #ifdef WO_TASK18
 #define __woSetupTask18 __woSetupTask(WO_18);
-#define __woRunTask18 __woRunTask(WO_TASK18, WO_18);
+#define __woRunTask18 __woRunTask(WO_18, WO_TASK18);
 #else
 #define __woSetupTask18
 #define __woRunTask18
@@ -177,7 +168,7 @@
 
 #ifdef WO_TASK19
 #define __woSetupTask19 __woSetupTask(WO_19);
-#define __woRunTask19 __woRunTask(WO_TASK19, WO_19);
+#define __woRunTask19 __woRunTask(WO_19, WO_TASK19);
 #else
 #define __woSetupTask19
 #define __woRunTask19
@@ -186,7 +177,7 @@
 
 #ifdef WO_TASK20
 #define __woSetupTask20 __woSetupTask(WO_20);
-#define __woRunTask20 __woRunTask(WO_TASK20, WO_20);
+#define __woRunTask20 __woRunTask(WO_20, WO_TASK20);
 #else
 #define __woSetupTask20
 #define __woRunTask20
@@ -195,7 +186,7 @@
 
 #ifdef WO_TASK21
 #define __woSetupTask21 __woSetupTask(WO_21);
-#define __woRunTask21 __woRunTask(WO_TASK21, WO_21);
+#define __woRunTask21 __woRunTask(WO_21, WO_TASK21);
 #else
 #define __woSetupTask21
 #define __woRunTask21
@@ -204,7 +195,7 @@
 
 #ifdef WO_TASK22
 #define __woSetupTask22 __woSetupTask(WO_22);
-#define __woRunTask22 __woRunTask(WO_TASK22, WO_22);
+#define __woRunTask22 __woRunTask(WO_22, WO_TASK22);
 #else
 #define __woSetupTask22
 #define __woRunTask22
@@ -213,7 +204,7 @@
 
 #ifdef WO_TASK23
 #define __woSetupTask23 __woSetupTask(WO_23);
-#define __woRunTask23 __woRunTask(WO_TASK23, WO_23);
+#define __woRunTask23 __woRunTask(WO_23, WO_TASK23);
 #else
 #define __woSetupTask23
 #define __woRunTask23
@@ -222,7 +213,7 @@
 
 #ifdef WO_TASK24
 #define __woSetupTask24 __woSetupTask(WO_24);
-#define __woRunTask24 __woRunTask(WO_TASK24, WO_24);
+#define __woRunTask24 __woRunTask(WO_24, WO_TASK24);
 #else
 #define __woSetupTask24
 #define __woRunTask24
@@ -231,7 +222,7 @@
 
 #ifdef WO_TASK25
 #define __woSetupTask25 __woSetupTask(WO_25);
-#define __woRunTask25 __woRunTask(WO_TASK25, WO_25);
+#define __woRunTask25 __woRunTask(WO_25, WO_TASK25);
 #else
 #define __woSetupTask25
 #define __woRunTask25
@@ -240,7 +231,7 @@
 
 #ifdef WO_TASK26
 #define __woSetupTask26 __woSetupTask(WO_26);
-#define __woRunTask26 __woRunTask(WO_TASK26, WO_26);
+#define __woRunTask26 __woRunTask(WO_26, WO_TASK26);
 #else
 #define __woSetupTask26
 #define __woRunTask26
@@ -249,7 +240,7 @@
 
 #ifdef WO_TASK27
 #define __woSetupTask27 __woSetupTask(WO_27);
-#define __woRunTask27 __woRunTask(WO_TASK27, WO_27);
+#define __woRunTask27 __woRunTask(WO_27, WO_TASK27);
 #else
 #define __woSetupTask27
 #define __woRunTask27
@@ -258,7 +249,7 @@
 
 #ifdef WO_TASK28
 #define __woSetupTask28 __woSetupTask(WO_28);
-#define __woRunTask28 __woRunTask(WO_TASK28, WO_28);
+#define __woRunTask28 __woRunTask(WO_28, WO_TASK28);
 #else
 #define __woSetupTask28
 #define __woRunTask28
@@ -267,7 +258,7 @@
 
 #ifdef WO_TASK29
 #define __woSetupTask29 __woSetupTask(WO_29);
-#define __woRunTask29 __woRunTask(WO_TASK29, WO_29);
+#define __woRunTask29 __woRunTask(WO_29, WO_TASK29);
 #else
 #define __woSetupTask29
 #define __woRunTask29
@@ -276,7 +267,7 @@
 
 #ifdef WO_TASK30
 #define __woSetupTask30 __woSetupTask(WO_30);
-#define __woRunTask30 __woRunTask(WO_TASK30, WO_30);
+#define __woRunTask30 __woRunTask(WO_30, WO_TASK30);
 #else
 #define __woSetupTask30
 #define __woRunTask30
@@ -285,7 +276,7 @@
 
 #ifdef WO_TASK31
 #define __woSetupTask31 __woSetupTask(WO_31);
-#define __woRunTask31 __woRunTask(WO_TASK31, WO_31);
+#define __woRunTask31 __woRunTask(WO_31, WO_TASK31);
 #else
 #define __woSetupTask31
 #define __woRunTask31
@@ -294,618 +285,14 @@
 
 #ifdef WO_TASK32
 #define __woSetupTask32 __woSetupTask(WO_32);
-#define __woRunTask32 __woRunTask(WO_TASK32, WO_32);
+#define __woRunTask32 __woRunTask(WO_32, WO_TASK32);
 #else
 #define __woSetupTask32
 #define __woRunTask32
 #endif
 
-
-#ifdef WO_TASK33
-#define __woSetupTask33 __woSetupTask(WO_33);
-#define __woRunTask33 __woRunTask(WO_TASK33, WO_33);
-#else
-#define __woSetupTask33
-#define __woRunTask33
-#endif
-
-
-#ifdef WO_TASK34
-#define __woSetupTask34 __woSetupTask(WO_34);
-#define __woRunTask34 __woRunTask(WO_TASK34, WO_34);
-#else
-#define __woSetupTask34
-#define __woRunTask34
-#endif
-
-
-#ifdef WO_TASK35
-#define __woSetupTask35 __woSetupTask(WO_35);
-#define __woRunTask35 __woRunTask(WO_TASK35, WO_35);
-#else
-#define __woSetupTask35
-#define __woRunTask35
-#endif
-
-
-#ifdef WO_TASK36
-#define __woSetupTask36 __woSetupTask(WO_36);
-#define __woRunTask36 __woRunTask(WO_TASK36, WO_36);
-#else
-#define __woSetupTask36
-#define __woRunTask36
-#endif
-
-
-#ifdef WO_TASK37
-#define __woSetupTask37 __woSetupTask(WO_37);
-#define __woRunTask37 __woRunTask(WO_TASK37, WO_37);
-#else
-#define __woSetupTask37
-#define __woRunTask37
-#endif
-
-
-#ifdef WO_TASK38
-#define __woSetupTask38 __woSetupTask(WO_38);
-#define __woRunTask38 __woRunTask(WO_TASK38, WO_38);
-#else
-#define __woSetupTask38
-#define __woRunTask38
-#endif
-
-
-#ifdef WO_TASK39
-#define __woSetupTask39 __woSetupTask(WO_39);
-#define __woRunTask39 __woRunTask(WO_TASK39, WO_39);
-#else
-#define __woSetupTask39
-#define __woRunTask39
-#endif
-
-
-#ifdef WO_TASK40
-#define __woSetupTask40 __woSetupTask(WO_40);
-#define __woRunTask40 __woRunTask(WO_TASK40, WO_40);
-#else
-#define __woSetupTask40
-#define __woRunTask40
-#endif
-
-
-#ifdef WO_TASK41
-#define __woSetupTask41 __woSetupTask(WO_41);
-#define __woRunTask41 __woRunTask(WO_TASK41, WO_41);
-#else
-#define __woSetupTask41
-#define __woRunTask41
-#endif
-
-
-#ifdef WO_TASK42
-#define __woSetupTask42 __woSetupTask(WO_42);
-#define __woRunTask42 __woRunTask(WO_TASK42, WO_42);
-#else
-#define __woSetupTask42
-#define __woRunTask42
-#endif
-
-
-#ifdef WO_TASK43
-#define __woSetupTask43 __woSetupTask(WO_43);
-#define __woRunTask43 __woRunTask(WO_TASK43, WO_43);
-#else
-#define __woSetupTask43
-#define __woRunTask43
-#endif
-
-
-#ifdef WO_TASK44
-#define __woSetupTask44 __woSetupTask(WO_44);
-#define __woRunTask44 __woRunTask(WO_TASK44, WO_44);
-#else
-#define __woSetupTask44
-#define __woRunTask44
-#endif
-
-
-#ifdef WO_TASK45
-#define __woSetupTask45 __woSetupTask(WO_45);
-#define __woRunTask45 __woRunTask(WO_TASK45, WO_45);
-#else
-#define __woSetupTask45
-#define __woRunTask45
-#endif
-
-
-#ifdef WO_TASK46
-#define __woSetupTask46 __woSetupTask(WO_46);
-#define __woRunTask46 __woRunTask(WO_TASK46, WO_46);
-#else
-#define __woSetupTask46
-#define __woRunTask46
-#endif
-
-
-#ifdef WO_TASK47
-#define __woSetupTask47 __woSetupTask(WO_47);
-#define __woRunTask47 __woRunTask(WO_TASK47, WO_47);
-#else
-#define __woSetupTask47
-#define __woRunTask47
-#endif
-
-
-#ifdef WO_TASK48
-#define __woSetupTask48 __woSetupTask(WO_48);
-#define __woRunTask48 __woRunTask(WO_TASK48, WO_48);
-#else
-#define __woSetupTask48
-#define __woRunTask48
-#endif
-
-
-#ifdef WO_TASK49
-#define __woSetupTask49 __woSetupTask(WO_49);
-#define __woRunTask49 __woRunTask(WO_TASK49, WO_49);
-#else
-#define __woSetupTask49
-#define __woRunTask49
-#endif
-
-
-#ifdef WO_TASK50
-#define __woSetupTask50 __woSetupTask(WO_50);
-#define __woRunTask50 __woRunTask(WO_TASK50, WO_50);
-#else
-#define __woSetupTask50
-#define __woRunTask50
-#endif
-
-
-#ifdef WO_TASK51
-#define __woSetupTask51 __woSetupTask(WO_51);
-#define __woRunTask51 __woRunTask(WO_TASK51, WO_51);
-#else
-#define __woSetupTask51
-#define __woRunTask51
-#endif
-
-
-#ifdef WO_TASK52
-#define __woSetupTask52 __woSetupTask(WO_52);
-#define __woRunTask52 __woRunTask(WO_TASK52, WO_52);
-#else
-#define __woSetupTask52
-#define __woRunTask52
-#endif
-
-
-#ifdef WO_TASK53
-#define __woSetupTask53 __woSetupTask(WO_53);
-#define __woRunTask53 __woRunTask(WO_TASK53, WO_53);
-#else
-#define __woSetupTask53
-#define __woRunTask53
-#endif
-
-
-#ifdef WO_TASK54
-#define __woSetupTask54 __woSetupTask(WO_54);
-#define __woRunTask54 __woRunTask(WO_TASK54, WO_54);
-#else
-#define __woSetupTask54
-#define __woRunTask54
-#endif
-
-
-#ifdef WO_TASK55
-#define __woSetupTask55 __woSetupTask(WO_55);
-#define __woRunTask55 __woRunTask(WO_TASK55, WO_55);
-#else
-#define __woSetupTask55
-#define __woRunTask55
-#endif
-
-
-#ifdef WO_TASK56
-#define __woSetupTask56 __woSetupTask(WO_56);
-#define __woRunTask56 __woRunTask(WO_TASK56, WO_56);
-#else
-#define __woSetupTask56
-#define __woRunTask56
-#endif
-
-
-#ifdef WO_TASK57
-#define __woSetupTask57 __woSetupTask(WO_57);
-#define __woRunTask57 __woRunTask(WO_TASK57, WO_57);
-#else
-#define __woSetupTask57
-#define __woRunTask57
-#endif
-
-
-#ifdef WO_TASK58
-#define __woSetupTask58 __woSetupTask(WO_58);
-#define __woRunTask58 __woRunTask(WO_TASK58, WO_58);
-#else
-#define __woSetupTask58
-#define __woRunTask58
-#endif
-
-
-#ifdef WO_TASK59
-#define __woSetupTask59 __woSetupTask(WO_59);
-#define __woRunTask59 __woRunTask(WO_TASK59, WO_59);
-#else
-#define __woSetupTask59
-#define __woRunTask59
-#endif
-
-
-#ifdef WO_TASK60
-#define __woSetupTask60 __woSetupTask(WO_60);
-#define __woRunTask60 __woRunTask(WO_TASK60, WO_60);
-#else
-#define __woSetupTask60
-#define __woRunTask60
-#endif
-
-
-#ifdef WO_TASK61
-#define __woSetupTask61 __woSetupTask(WO_61);
-#define __woRunTask61 __woRunTask(WO_TASK61, WO_61);
-#else
-#define __woSetupTask61
-#define __woRunTask61
-#endif
-
-
-#ifdef WO_TASK62
-#define __woSetupTask62 __woSetupTask(WO_62);
-#define __woRunTask62 __woRunTask(WO_TASK62, WO_62);
-#else
-#define __woSetupTask62
-#define __woRunTask62
-#endif
-
-
-#ifdef WO_TASK63
-#define __woSetupTask63 __woSetupTask(WO_63);
-#define __woRunTask63 __woRunTask(WO_TASK63, WO_63);
-#else
-#define __woSetupTask63
-#define __woRunTask63
-#endif
-
-
-#ifdef WO_TASK64
-#define __woSetupTask64 __woSetupTask(WO_64);
-#define __woRunTask64 __woRunTask(WO_TASK64, WO_64);
-#else
-#define __woSetupTask64
-#define __woRunTask64
-#endif
-
-
-#ifdef WO_TASK65
-#define __woSetupTask65 __woSetupTask(WO_65);
-#define __woRunTask65 __woRunTask(WO_TASK65, WO_65);
-#else
-#define __woSetupTask65
-#define __woRunTask65
-#endif
-
-
-#ifdef WO_TASK66
-#define __woSetupTask66 __woSetupTask(WO_66);
-#define __woRunTask66 __woRunTask(WO_TASK66, WO_66);
-#else
-#define __woSetupTask66
-#define __woRunTask66
-#endif
-
-
-#ifdef WO_TASK67
-#define __woSetupTask67 __woSetupTask(WO_67);
-#define __woRunTask67 __woRunTask(WO_TASK67, WO_67);
-#else
-#define __woSetupTask67
-#define __woRunTask67
-#endif
-
-
-#ifdef WO_TASK68
-#define __woSetupTask68 __woSetupTask(WO_68);
-#define __woRunTask68 __woRunTask(WO_TASK68, WO_68);
-#else
-#define __woSetupTask68
-#define __woRunTask68
-#endif
-
-
-#ifdef WO_TASK69
-#define __woSetupTask69 __woSetupTask(WO_69);
-#define __woRunTask69 __woRunTask(WO_TASK69, WO_69);
-#else
-#define __woSetupTask69
-#define __woRunTask69
-#endif
-
-
-#ifdef WO_TASK70
-#define __woSetupTask70 __woSetupTask(WO_70);
-#define __woRunTask70 __woRunTask(WO_TASK70, WO_70);
-#else
-#define __woSetupTask70
-#define __woRunTask70
-#endif
-
-
-#ifdef WO_TASK71
-#define __woSetupTask71 __woSetupTask(WO_71);
-#define __woRunTask71 __woRunTask(WO_TASK71, WO_71);
-#else
-#define __woSetupTask71
-#define __woRunTask71
-#endif
-
-
-#ifdef WO_TASK72
-#define __woSetupTask72 __woSetupTask(WO_72);
-#define __woRunTask72 __woRunTask(WO_TASK72, WO_72);
-#else
-#define __woSetupTask72
-#define __woRunTask72
-#endif
-
-
-#ifdef WO_TASK73
-#define __woSetupTask73 __woSetupTask(WO_73);
-#define __woRunTask73 __woRunTask(WO_TASK73, WO_73);
-#else
-#define __woSetupTask73
-#define __woRunTask73
-#endif
-
-
-#ifdef WO_TASK74
-#define __woSetupTask74 __woSetupTask(WO_74);
-#define __woRunTask74 __woRunTask(WO_TASK74, WO_74);
-#else
-#define __woSetupTask74
-#define __woRunTask74
-#endif
-
-
-#ifdef WO_TASK75
-#define __woSetupTask75 __woSetupTask(WO_75);
-#define __woRunTask75 __woRunTask(WO_TASK75, WO_75);
-#else
-#define __woSetupTask75
-#define __woRunTask75
-#endif
-
-
-#ifdef WO_TASK76
-#define __woSetupTask76 __woSetupTask(WO_76);
-#define __woRunTask76 __woRunTask(WO_TASK76, WO_76);
-#else
-#define __woSetupTask76
-#define __woRunTask76
-#endif
-
-
-#ifdef WO_TASK77
-#define __woSetupTask77 __woSetupTask(WO_77);
-#define __woRunTask77 __woRunTask(WO_TASK77, WO_77);
-#else
-#define __woSetupTask77
-#define __woRunTask77
-#endif
-
-
-#ifdef WO_TASK78
-#define __woSetupTask78 __woSetupTask(WO_78);
-#define __woRunTask78 __woRunTask(WO_TASK78, WO_78);
-#else
-#define __woSetupTask78
-#define __woRunTask78
-#endif
-
-
-#ifdef WO_TASK79
-#define __woSetupTask79 __woSetupTask(WO_79);
-#define __woRunTask79 __woRunTask(WO_TASK79, WO_79);
-#else
-#define __woSetupTask79
-#define __woRunTask79
-#endif
-
-
-#ifdef WO_TASK80
-#define __woSetupTask80 __woSetupTask(WO_80);
-#define __woRunTask80 __woRunTask(WO_TASK80, WO_80);
-#else
-#define __woSetupTask80
-#define __woRunTask80
-#endif
-
-
-#ifdef WO_TASK81
-#define __woSetupTask81 __woSetupTask(WO_81);
-#define __woRunTask81 __woRunTask(WO_TASK81, WO_81);
-#else
-#define __woSetupTask81
-#define __woRunTask81
-#endif
-
-
-#ifdef WO_TASK82
-#define __woSetupTask82 __woSetupTask(WO_82);
-#define __woRunTask82 __woRunTask(WO_TASK82, WO_82);
-#else
-#define __woSetupTask82
-#define __woRunTask82
-#endif
-
-
-#ifdef WO_TASK83
-#define __woSetupTask83 __woSetupTask(WO_83);
-#define __woRunTask83 __woRunTask(WO_TASK83, WO_83);
-#else
-#define __woSetupTask83
-#define __woRunTask83
-#endif
-
-
-#ifdef WO_TASK84
-#define __woSetupTask84 __woSetupTask(WO_84);
-#define __woRunTask84 __woRunTask(WO_TASK84, WO_84);
-#else
-#define __woSetupTask84
-#define __woRunTask84
-#endif
-
-
-#ifdef WO_TASK85
-#define __woSetupTask85 __woSetupTask(WO_85);
-#define __woRunTask85 __woRunTask(WO_TASK85, WO_85);
-#else
-#define __woSetupTask85
-#define __woRunTask85
-#endif
-
-
-#ifdef WO_TASK86
-#define __woSetupTask86 __woSetupTask(WO_86);
-#define __woRunTask86 __woRunTask(WO_TASK86, WO_86);
-#else
-#define __woSetupTask86
-#define __woRunTask86
-#endif
-
-
-#ifdef WO_TASK87
-#define __woSetupTask87 __woSetupTask(WO_87);
-#define __woRunTask87 __woRunTask(WO_TASK87, WO_87);
-#else
-#define __woSetupTask87
-#define __woRunTask87
-#endif
-
-
-#ifdef WO_TASK88
-#define __woSetupTask88 __woSetupTask(WO_88);
-#define __woRunTask88 __woRunTask(WO_TASK88, WO_88);
-#else
-#define __woSetupTask88
-#define __woRunTask88
-#endif
-
-
-#ifdef WO_TASK89
-#define __woSetupTask89 __woSetupTask(WO_89);
-#define __woRunTask89 __woRunTask(WO_TASK89, WO_89);
-#else
-#define __woSetupTask89
-#define __woRunTask89
-#endif
-
-
-#ifdef WO_TASK90
-#define __woSetupTask90 __woSetupTask(WO_90);
-#define __woRunTask90 __woRunTask(WO_TASK90, WO_90);
-#else
-#define __woSetupTask90
-#define __woRunTask90
-#endif
-
-
-#ifdef WO_TASK91
-#define __woSetupTask91 __woSetupTask(WO_91);
-#define __woRunTask91 __woRunTask(WO_TASK91, WO_91);
-#else
-#define __woSetupTask91
-#define __woRunTask91
-#endif
-
-
-#ifdef WO_TASK92
-#define __woSetupTask92 __woSetupTask(WO_92);
-#define __woRunTask92 __woRunTask(WO_TASK92, WO_92);
-#else
-#define __woSetupTask92
-#define __woRunTask92
-#endif
-
-
-#ifdef WO_TASK93
-#define __woSetupTask93 __woSetupTask(WO_93);
-#define __woRunTask93 __woRunTask(WO_TASK93, WO_93);
-#else
-#define __woSetupTask93
-#define __woRunTask93
-#endif
-
-
-#ifdef WO_TASK94
-#define __woSetupTask94 __woSetupTask(WO_94);
-#define __woRunTask94 __woRunTask(WO_TASK94, WO_94);
-#else
-#define __woSetupTask94
-#define __woRunTask94
-#endif
-
-
-#ifdef WO_TASK95
-#define __woSetupTask95 __woSetupTask(WO_95);
-#define __woRunTask95 __woRunTask(WO_TASK95, WO_95);
-#else
-#define __woSetupTask95
-#define __woRunTask95
-#endif
-
-
-#ifdef WO_TASK96
-#define __woSetupTask96 __woSetupTask(WO_96);
-#define __woRunTask96 __woRunTask(WO_TASK96, WO_96);
-#else
-#define __woSetupTask96
-#define __woRunTask96
-#endif
-
-
-#ifdef WO_TASK97
-#define __woSetupTask97 __woSetupTask(WO_97);
-#define __woRunTask97 __woRunTask(WO_TASK97, WO_97);
-#else
-#define __woSetupTask97
-#define __woRunTask97
-#endif
-
-
-#ifdef WO_TASK98
-#define __woSetupTask98 __woSetupTask(WO_98);
-#define __woRunTask98 __woRunTask(WO_TASK98, WO_98);
-#else
-#define __woSetupTask98
-#define __woRunTask98
-#endif
-
-
-#ifdef WO_TASK99
-#define __woSetupTask99 __woSetupTask(WO_99);
-#define __woRunTask99 __woRunTask(WO_TASK99, WO_99);
-#else
-#define __woSetupTask99
-#define __woRunTask99
-#endif
-
-#define WO_RunOS()\
+#define __woRun()\
 do {\
-		__woSetupTask0\
 		__woSetupTask1\
 		__woSetupTask2\
 		__woSetupTask3\
@@ -938,75 +325,7 @@ do {\
 		__woSetupTask30\
 		__woSetupTask31\
 		__woSetupTask32\
-		__woSetupTask33\
-		__woSetupTask34\
-		__woSetupTask35\
-		__woSetupTask36\
-		__woSetupTask37\
-		__woSetupTask38\
-		__woSetupTask39\
-		__woSetupTask40\
-		__woSetupTask41\
-		__woSetupTask42\
-		__woSetupTask43\
-		__woSetupTask44\
-		__woSetupTask45\
-		__woSetupTask46\
-		__woSetupTask47\
-		__woSetupTask48\
-		__woSetupTask49\
-		__woSetupTask50\
-		__woSetupTask51\
-		__woSetupTask52\
-		__woSetupTask53\
-		__woSetupTask54\
-		__woSetupTask55\
-		__woSetupTask56\
-		__woSetupTask57\
-		__woSetupTask58\
-		__woSetupTask59\
-		__woSetupTask60\
-		__woSetupTask61\
-		__woSetupTask62\
-		__woSetupTask63\
-		__woSetupTask64\
-		__woSetupTask65\
-		__woSetupTask66\
-		__woSetupTask67\
-		__woSetupTask68\
-		__woSetupTask69\
-		__woSetupTask70\
-		__woSetupTask71\
-		__woSetupTask72\
-		__woSetupTask73\
-		__woSetupTask74\
-		__woSetupTask75\
-		__woSetupTask76\
-		__woSetupTask77\
-		__woSetupTask78\
-		__woSetupTask79\
-		__woSetupTask80\
-		__woSetupTask81\
-		__woSetupTask82\
-		__woSetupTask83\
-		__woSetupTask84\
-		__woSetupTask85\
-		__woSetupTask86\
-		__woSetupTask87\
-		__woSetupTask88\
-		__woSetupTask89\
-		__woSetupTask90\
-		__woSetupTask91\
-		__woSetupTask92\
-		__woSetupTask93\
-		__woSetupTask94\
-		__woSetupTask95\
-		__woSetupTask96\
-		__woSetupTask97\
-		__woSetupTask98\
-		__woSetupTask99\
 	while(true) {\
-		__woRunTask0\
 		__woRunTask1\
 		__woRunTask2\
 		__woRunTask3\
@@ -1039,72 +358,5 @@ do {\
 		__woRunTask30\
 		__woRunTask31\
 		__woRunTask32\
-		__woRunTask33\
-		__woRunTask34\
-		__woRunTask35\
-		__woRunTask36\
-		__woRunTask37\
-		__woRunTask38\
-		__woRunTask39\
-		__woRunTask40\
-		__woRunTask41\
-		__woRunTask42\
-		__woRunTask43\
-		__woRunTask44\
-		__woRunTask45\
-		__woRunTask46\
-		__woRunTask47\
-		__woRunTask48\
-		__woRunTask49\
-		__woRunTask50\
-		__woRunTask51\
-		__woRunTask52\
-		__woRunTask53\
-		__woRunTask54\
-		__woRunTask55\
-		__woRunTask56\
-		__woRunTask57\
-		__woRunTask58\
-		__woRunTask59\
-		__woRunTask60\
-		__woRunTask61\
-		__woRunTask62\
-		__woRunTask63\
-		__woRunTask64\
-		__woRunTask65\
-		__woRunTask66\
-		__woRunTask67\
-		__woRunTask68\
-		__woRunTask69\
-		__woRunTask70\
-		__woRunTask71\
-		__woRunTask72\
-		__woRunTask73\
-		__woRunTask74\
-		__woRunTask75\
-		__woRunTask76\
-		__woRunTask77\
-		__woRunTask78\
-		__woRunTask79\
-		__woRunTask80\
-		__woRunTask81\
-		__woRunTask82\
-		__woRunTask83\
-		__woRunTask84\
-		__woRunTask85\
-		__woRunTask86\
-		__woRunTask87\
-		__woRunTask88\
-		__woRunTask89\
-		__woRunTask90\
-		__woRunTask91\
-		__woRunTask92\
-		__woRunTask93\
-		__woRunTask94\
-		__woRunTask95\
-		__woRunTask96\
-		__woRunTask97\
-		__woRunTask98\
-		__woRunTask99\
 	}\
 } while(0)

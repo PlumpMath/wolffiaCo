@@ -9,7 +9,7 @@ task_test_header = """
 task_test_tmpl = """
 #ifdef WO_TASK{0}
 #define __woSetupTask{0} __woSetupTask(WO_{0});
-#define __woRunTask{0} __woRunTask(WO_TASK{0}, WO_{0});
+#define __woRunTask{0} __woRunTask(WO_{0}, WO_TASK{0});
 #else
 #define __woSetupTask{0}
 #define __woRunTask{0}
@@ -22,22 +22,22 @@ def gen_tasks(size):
     print >>out, task_test_header
 
     for i in range(size):
-        print >>out, task_test_tmpl.format(i)
+        print >>out, task_test_tmpl.format(i+1)
 
-    print >>out, "#define WO_RunOS()\\"
+    print >>out, "#define __woRun()\\"
     print >>out, "do {\\"
 
     for i in range(size):
-        print >>out, "\t\t__woSetupTask{0}\\".format(i)
+        print >>out, "\t\t__woSetupTask{0}\\".format(i+1)
 
     print >>out, "\twhile(true) {\\"
 
     for i in range(size):
-        print >>out, "\t\t__woRunTask{0}\\".format(i)
+        print >>out, "\t\t__woRunTask{0}\\".format(i+1)
 
     print >>out, "\t}\\"
     print >>out, "} while(0)"
     
     out.close()
 
-gen_tasks(100)
+gen_tasks(32)
