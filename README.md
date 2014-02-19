@@ -1,3 +1,7 @@
+# Experiemental project
+
+For now it's only recomended to use this as testing because newer version might easily broke your code.
+
 wolffiaCo
 =========
 
