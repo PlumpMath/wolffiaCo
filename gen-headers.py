@@ -40,4 +40,4 @@ def gen_tasks(size):
     
     out.close()
 
-gen_tasks(32)
+gen_tasks(128)
