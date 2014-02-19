@@ -7,6 +7,29 @@ wolffiaCo name comes from [wolffia](http://en.wikipedia.org/wiki/Wolffia) which 
 
 Based on [ProtoThreads](http://dunkels.com/adam/pt/) by Adam Dunkels and uses [Label as Values](http://gcc.gnu.org/onlinedocs/gcc/Labels-as-Values.html) extension. 
 
+### Installation
+
+###### OS X
+
+```bash
+$ cd ~/Documents/Arduino/libraries/
+$ git clone https://github.com/parkerkane/wolffiaCo.git
+```
+
+###### Linux
+TODO
+
+###### Windows
+
+```
+$ cd "My Documents\Arduino\libraries"
+$ git clone https://github.com/parkerkane/wolffiaCo.git
+```
+
+More information about installing libraries can found from Arduino's [websites](http://arduino.cc/en/Guide/Libraries) or from [Adafruit](http://learn.adafruit.com/adafruit-all-about-arduino-libraries-install-use).
+
+
+
 Arduino IDE
 -----------
 
@@ -140,25 +163,3 @@ void loop() {
   blinkOff();
 }
 ```
-
-### Installation
-
-###### OS X
-
-```bash
-$ cd ~/Documents/Arduino/libraries/
-$ git clone https://github.com/parkerkane/wolffiaCo.git
-```
-
-###### Linux
-TODO
-
-###### Windows
-
-```
-$ cd "My Documents\Arduino\libraries"
-$ git clone https://github.com/parkerkane/wolffiaCo.git
-```
-
-More information about installing libraries can found from Arduino's [websites](http://arduino.cc/en/Guide/Libraries) or from [Adafruit](http://learn.adafruit.com/adafruit-all-about-arduino-libraries-install-use).
-
