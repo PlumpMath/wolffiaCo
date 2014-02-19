@@ -1,6 +1,6 @@
-# Experiemental project
+#### Experiemental project
 
-For now it's only recomended to use this as testing because newer version might easily broke your code.
+For now it's only recommended to test this project because newer version/commit might easily broke your code.
 
 wolffiaCo
 =========
