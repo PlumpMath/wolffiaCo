@@ -10,4 +10,4 @@
 
 uint8_t event_position = 0;
 
-uint16_t event_buffer[Event_Mask+1];
+event_t event_buffer[Eventbuffer_Mask+1];

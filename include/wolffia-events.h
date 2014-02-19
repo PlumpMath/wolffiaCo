@@ -11,18 +11,37 @@
 
 #include <stdint.h>
 
-#define Event_Size 4
-#define Event_Mask (1 << Event_Size)-1
+#define Eventbuffer_Size 5
+#define Eventbuffer_Mask ((1 << Eventbuffer_Size)-1)
+
+#ifdef WO_USE_WIDE_EVENTS
+typedef uint16_t event_t;
+
+#define Event_DefaultSize 8
+
+#else
+typedef uint8_t event_t;
+
+#define Event_DefaultSize 6
+
+#endif
+
+#ifndef Event_Size
+# define Event_Size Event_DefaultSize
+#endif
+
+#define Event_Mask ((1 << Event_Size)-1)
+
 
 extern uint8_t event_position;
 
-extern uint16_t event_buffer[Event_Mask+1];
+extern event_t event_buffer[Eventbuffer_Mask+1];
 
-#define hasEvents(pos) (event_position != pos)
+#define hasEvents(pos) (event_position != (pos))
 
-#define dispatchEvent(evt, data) do { event_buffer[(event_position++) & Event_Mask] = (evt) | ((data) << 8); } while(0)
-#define getEvent(pos) (event_buffer[pos & Event_Mask] & 0xFF)
-#define getEventData(pos) ((event_buffer[pos & Event_Mask] >> 8) & 0xFF)
+#define dispatchEvent(evt, data) do { event_buffer[(event_position++) & Eventbuffer_Mask] = (evt) | ((data) << Event_Size); } while(0)
+#define getEvent(pos) (event_buffer[pos & Eventbuffer_Mask] & Event_Mask)
+#define getEventData(pos) ((event_buffer[pos & Eventbuffer_Mask] >> Event_Size) & Event_Mask)
 
 #define waitEvent(pos) yieldUntil(hasEvents(pos))
 
