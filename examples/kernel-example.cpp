@@ -8,7 +8,7 @@
 #define WO_TASK2 fizz()
 #define WO_TASK3 buzz()
 
-#define WO_TASK30 sleep()
+#define WO_TASK30 sleep(20)
 
 #include <wolffia.h>
 
@@ -55,14 +55,14 @@ void buzz() {
     }
 }
 
-void sleep() {
+void sleep(int ms) {
     WO_InitTask();
     
     while (true) {
 #ifdef ARDUINO
-        delay(20);
+        delay(ms);
 #else
-        usleep(20*1000);
+        usleep(ms*1000);
         fflush(stdout);
 #endif
         yield();
