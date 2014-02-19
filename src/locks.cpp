@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Timo Reunanen. All rights reserved.
 //
 
-#include "coroutine.h"
+#include <coroutine.h>
 
 unsigned short __coroutine_locks = 0;
 

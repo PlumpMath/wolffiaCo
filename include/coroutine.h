@@ -44,7 +44,7 @@ public:
 
 #define __coLabelize() __coConcat(__coLabel_, __LINE__)
 
-#define __coName(name) __coConcat(__coVar_, name)
+#define CORO_Name(name) __coConcat(__coVar_, name)
 
 #define __coResumePosition() if (__coData->state != NULL) { goto *(__coData->state); }
 #define __coLabelPosition() __coLabelize():
@@ -52,15 +52,16 @@ public:
 
 #define CORO_Define CORO_Define_Impl
 
+#define CORO_DefineStruct(name) struct COROData CORO_Name(name) = { NULL, 0 };
+
 #if defined(__CPP11__) || defined(__C__)
-# define CORO_Define_Impl(name) struct COROData __coName(name) = { NULL, 0 };
+# define CORO_Define_Impl(name) CORO_DefineStruct(name)
 #else
-# define CORO_Define_Impl(name) CORODataClass __coName(name);
-# define CORO_DefineStruct(name) struct COROData __coName(name) = { NULL, 0 };
+# define CORO_Define_Impl(name) CORODataClass CORO_Name(name);
 #endif
 
-#define CORO_Init_Impl(dataType, name, ret...)\
-    dataType *__coData = &(__coName(name));\
+#define CORO_Init_Impl(dataType, dataValue, ret...)\
+    dataType *__coData = &(dataValue);\
     if (__coData->flags & CORO_FLAG_RESET) {\
         __coData->state = NULL;\
         __coData->flags &= ~(CORO_FLAG_RESET | CORO_FLAG_SUSPEND);\
@@ -73,11 +74,11 @@ public:
 
 
 #if defined(__CPP11__) || defined(__C__)
-#  define CORO_Init(name, ret...) CORO_Init_Impl(COROData, name, ##ret)
-#  define CORO_Simple(ret...) static CORO_Define_Impl(__CORO); CORO_Init_Impl(COROData, __CORO, ##ret)
+#  define CORO_Init(name, ret...)    CORO_Init_Impl(COROData, CORO_Name(name), ##ret)
+#  define CORO_Simple(ret...) static CORO_Define_Impl(__CORO); CORO_Init_Impl(COROData, CORO_Name(__CORO), ##ret)
 #else
-#  define CORO_Init(name, ret...) CORO_Init_Impl(CORODataClass, name, ##ret)
-#  define CORO_Simple(ret...) static CORO_DefineStruct(__CORO); CORO_Init_Impl(COROData, __CORO, ##ret)
+#  define CORO_Init(name, ret...)    CORO_Init_Impl(CORODataClass, CORO_Name(name), ##ret)
+#  define CORO_Simple(ret...) static CORO_DefineStruct(__CORO); CORO_Init_Impl(COROData, CORO_Name(__CORO), ##ret)
 #endif
 
 #define yield(val) do { __coData->flags &= ~CORO_FLAG_SUSPEND; __coSavePosition(); return val; __coLabelPosition(); } while(0)
@@ -85,32 +86,6 @@ public:
 #define yieldWhile(cond, ret...) do { __coSavePosition(); __coLabelPosition(); if(cond) { __coData->flags &= ~CORO_FLAG_SUSPEND; return ret; } } while(0)
 #define yieldUntil(cond, ret...) yieldWhile(!(cond), ret)
 
-
-///////////////////////////////////////////////////////////////////////////////////////////
-// Locks
-
-#define LOCK_1  0x0001
-#define LOCK_2  0x0002
-#define LOCK_3  0x0004
-#define LOCK_4  0x0008
-#define LOCK_5  0x0010
-#define LOCK_6  0x0020
-#define LOCK_7  0x0040
-#define LOCK_8  0x0080
-#define LOCK_9  0x0100
-#define LOCK_10 0x0200
-#define LOCK_11 0x0400
-#define LOCK_12 0x0800
-#define LOCK_13 0x1000
-#define LOCK_14 0x2000
-#define LOCK_15 0x4000
-#define LOCK_16 0x8000
-
-bool lockAcquire(unsigned short id);
-void lockRelease(unsigned short id);
-bool lockTest(unsigned short id);
-
-#define lockWaitAndAcquire(id, ret...) yieldUntil(lockAcquire(id), ##ret)
-#define lockWait(id, ret...) yieldWhile(lockTest(id), ##ret)
+#include "locks.h"
 
 #endif

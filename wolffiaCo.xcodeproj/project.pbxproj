@@ -16,14 +16,18 @@
 		2377EE3118B000690045026E /* example-class.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2377EE2C18B000690045026E /* example-class.cpp */; };
 		2377EE3318B000690045026E /* example-simple.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2377EE2D18B000690045026E /* example-simple.cpp */; };
 		2377EE3518B000690045026E /* example-static.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2377EE2E18B000690045026E /* example-static.cpp */; };
+		238E1C0418B44F160058D493 /* kernel-example.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23F62C8018B3BD0E00E06AAC /* kernel-example.cpp */; };
 		23B9B07318AF9DD9008E2250 /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = 23B9B06B18AF9D1B008E2250 /* Makefile */; };
 		23DBDD4218B1CD0E002E8717 /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = 23B9B06B18AF9D1B008E2250 /* Makefile */; };
-		23F62C6D18B38CDA00E06AAC /* coroutine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23F62C6B18B38CDA00E06AAC /* coroutine.cpp */; };
-		23F62C6E18B38CDA00E06AAC /* coroutine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23F62C6B18B38CDA00E06AAC /* coroutine.cpp */; };
-		23F62C6F18B38CDA00E06AAC /* coroutine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23F62C6B18B38CDA00E06AAC /* coroutine.cpp */; };
+		23F62C6D18B38CDA00E06AAC /* locks.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23F62C6B18B38CDA00E06AAC /* locks.cpp */; };
+		23F62C6E18B38CDA00E06AAC /* locks.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23F62C6B18B38CDA00E06AAC /* locks.cpp */; };
+		23F62C6F18B38CDA00E06AAC /* locks.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23F62C6B18B38CDA00E06AAC /* locks.cpp */; };
 		23F62C7018B38CDA00E06AAC /* wolffia.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23F62C6C18B38CDA00E06AAC /* wolffia.cpp */; };
 		23F62C7118B38CDA00E06AAC /* wolffia.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23F62C6C18B38CDA00E06AAC /* wolffia.cpp */; };
 		23F62C7218B38CDA00E06AAC /* wolffia.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23F62C6C18B38CDA00E06AAC /* wolffia.cpp */; };
+		23F62C7618B3BCA000E06AAC /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = 23B9B06B18AF9D1B008E2250 /* Makefile */; };
+		23F62C7918B3BCA000E06AAC /* wolffia.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23F62C6C18B38CDA00E06AAC /* wolffia.cpp */; };
+		23F62C8318B3BD9300E06AAC /* locks.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23F62C6B18B38CDA00E06AAC /* locks.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -54,26 +58,40 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
+		23F62C7B18B3BCA000E06AAC /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		23376F6218B4593800DF8102 /* wolffia-task-gen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "wolffia-task-gen.h"; sourceTree = "<group>"; };
 		2341E86E18B1CEED005C29B7 /* maintest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = maintest.cpp; sourceTree = "<group>"; };
 		2341E86F18B1CEED005C29B7 /* maintest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = maintest.h; sourceTree = "<group>"; };
 		2341E87618B25AF7005C29B7 /* example.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = example.cpp; path = examples/example.cpp; sourceTree = "<group>"; };
 		2341E87D18B2F9FC005C29B7 /* fizzbuzz.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = fizzbuzz.cpp; path = examples/fizzbuzz.cpp; sourceTree = "<group>"; };
 		2341E87E18B2F9FC005C29B7 /* fizzbuzz.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = fizzbuzz.h; path = examples/fizzbuzz.h; sourceTree = "<group>"; };
+		2353DF6118B4550B00001F3D /* wolffia-task.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "wolffia-task.h"; sourceTree = "<group>"; };
 		2377EE1718AF9F250045026E /* index */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = index; sourceTree = BUILT_PRODUCTS_DIR; };
 		2377EE2C18B000690045026E /* example-class.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "example-class.cpp"; path = "examples/example-class.cpp"; sourceTree = "<group>"; };
 		2377EE2D18B000690045026E /* example-simple.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "example-simple.cpp"; path = "examples/example-simple.cpp"; sourceTree = "<group>"; };
 		2377EE2E18B000690045026E /* example-static.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "example-static.cpp"; path = "examples/example-static.cpp"; sourceTree = "<group>"; };
+		238E1C0518B452150058D493 /* locks.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = locks.h; sourceTree = "<group>"; };
 		23B9B06B18AF9D1B008E2250 /* Makefile */ = {isa = PBXFileReference; explicitFileType = sourcecode.make; fileEncoding = 4; path = Makefile; sourceTree = "<group>"; usesTabs = 1; };
 		23B9B06C18AF9D1B008E2250 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		23B9B07A18AF9DD9008E2250 /* example */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = example; sourceTree = BUILT_PRODUCTS_DIR; };
 		23DBDD4918B1CD0E002E8717 /* Tests */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Tests; sourceTree = BUILT_PRODUCTS_DIR; };
 		23F62C6818B38CDA00E06AAC /* coroutine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = coroutine.h; sourceTree = "<group>"; };
 		23F62C6918B38CDA00E06AAC /* wolffia.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wolffia.h; sourceTree = "<group>"; };
-		23F62C6B18B38CDA00E06AAC /* coroutine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = coroutine.cpp; sourceTree = "<group>"; };
+		23F62C6B18B38CDA00E06AAC /* locks.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = locks.cpp; sourceTree = "<group>"; };
 		23F62C6C18B38CDA00E06AAC /* wolffia.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = wolffia.cpp; sourceTree = "<group>"; };
+		23F62C7F18B3BCA000E06AAC /* ostest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ostest; sourceTree = BUILT_PRODUCTS_DIR; };
+		23F62C8018B3BD0E00E06AAC /* kernel-example.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "kernel-example.cpp"; path = "examples/kernel-example.cpp"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +110,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		23DBDD4418B1CD0E002E8717 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		23F62C7A18B3BCA000E06AAC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -119,6 +144,7 @@
 			children = (
 				23DBDD4918B1CD0E002E8717 /* Tests */,
 				23B9B07A18AF9DD9008E2250 /* example */,
+				23F62C7F18B3BCA000E06AAC /* ostest */,
 				2377EE1718AF9F250045026E /* index */,
 			);
 			name = Product;
@@ -127,6 +153,7 @@
 		23B9B07C18AF9E5F008E2250 /* Examples */ = {
 			isa = PBXGroup;
 			children = (
+				23F62C8018B3BD0E00E06AAC /* kernel-example.cpp */,
 				2341E87D18B2F9FC005C29B7 /* fizzbuzz.cpp */,
 				2341E87E18B2F9FC005C29B7 /* fizzbuzz.h */,
 				2341E87618B25AF7005C29B7 /* example.cpp */,
@@ -150,7 +177,10 @@
 			isa = PBXGroup;
 			children = (
 				23F62C6818B38CDA00E06AAC /* coroutine.h */,
+				238E1C0518B452150058D493 /* locks.h */,
 				23F62C6918B38CDA00E06AAC /* wolffia.h */,
+				2353DF6118B4550B00001F3D /* wolffia-task.h */,
+				23376F6218B4593800DF8102 /* wolffia-task-gen.h */,
 			);
 			path = include;
 			sourceTree = "<group>";
@@ -158,7 +188,7 @@
 		23F62C6A18B38CDA00E06AAC /* src */ = {
 			isa = PBXGroup;
 			children = (
-				23F62C6B18B38CDA00E06AAC /* coroutine.cpp */,
+				23F62C6B18B38CDA00E06AAC /* locks.cpp */,
 				23F62C6C18B38CDA00E06AAC /* wolffia.cpp */,
 			);
 			path = src;
@@ -218,6 +248,23 @@
 			productReference = 23DBDD4918B1CD0E002E8717 /* Tests */;
 			productType = "com.apple.product-type.tool";
 		};
+		23F62C7318B3BCA000E06AAC /* ostest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 23F62C7C18B3BCA000E06AAC /* Build configuration list for PBXNativeTarget "ostest" */;
+			buildPhases = (
+				23F62C7418B3BCA000E06AAC /* Sources */,
+				23F62C7A18B3BCA000E06AAC /* Frameworks */,
+				23F62C7B18B3BCA000E06AAC /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ostest;
+			productName = coroutine;
+			productReference = 23F62C7F18B3BCA000E06AAC /* ostest */;
+			productType = "com.apple.product-type.tool";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -241,6 +288,7 @@
 			targets = (
 				23B9B07118AF9DD9008E2250 /* example */,
 				23DBDD3E18B1CD0E002E8717 /* tests */,
+				23F62C7318B3BCA000E06AAC /* ostest */,
 				2377EE0D18AF9F0B0045026E /* index */,
 			);
 		};
@@ -253,7 +301,7 @@
 			files = (
 				2341E87818B25AF7005C29B7 /* example.cpp in Sources */,
 				2377EE3118B000690045026E /* example-class.cpp in Sources */,
-				23F62C6F18B38CDA00E06AAC /* coroutine.cpp in Sources */,
+				23F62C6F18B38CDA00E06AAC /* locks.cpp in Sources */,
 				2377EE3518B000690045026E /* example-static.cpp in Sources */,
 				23F62C7218B38CDA00E06AAC /* wolffia.cpp in Sources */,
 				2377EE3318B000690045026E /* example-simple.cpp in Sources */,
@@ -268,7 +316,7 @@
 			files = (
 				2341E87718B25AF7005C29B7 /* example.cpp in Sources */,
 				23B9B07318AF9DD9008E2250 /* Makefile in Sources */,
-				23F62C6D18B38CDA00E06AAC /* coroutine.cpp in Sources */,
+				23F62C6D18B38CDA00E06AAC /* locks.cpp in Sources */,
 				2341E87F18B2F9FC005C29B7 /* fizzbuzz.cpp in Sources */,
 				23F62C7018B38CDA00E06AAC /* wolffia.cpp in Sources */,
 			);
@@ -281,7 +329,18 @@
 				23F62C7118B38CDA00E06AAC /* wolffia.cpp in Sources */,
 				23DBDD4218B1CD0E002E8717 /* Makefile in Sources */,
 				2341E87018B1CEED005C29B7 /* maintest.cpp in Sources */,
-				23F62C6E18B38CDA00E06AAC /* coroutine.cpp in Sources */,
+				23F62C6E18B38CDA00E06AAC /* locks.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		23F62C7418B3BCA000E06AAC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				23F62C8318B3BD9300E06AAC /* locks.cpp in Sources */,
+				238E1C0418B44F160058D493 /* kernel-example.cpp in Sources */,
+				23F62C7618B3BCA000E06AAC /* Makefile in Sources */,
+				23F62C7918B3BCA000E06AAC /* wolffia.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,6 +477,38 @@
 			};
 			name = Release;
 		};
+		23F62C7D18B3BCA000E06AAC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
+				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"include/**",
+				);
+				PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR = NO;
+				PRODUCT_NAME = ostest;
+			};
+			name = Debug;
+		};
+		23F62C7E18B3BCA000E06AAC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
+				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"include/**",
+				);
+				PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR = NO;
+				PRODUCT_NAME = ostest;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -453,6 +544,15 @@
 			buildConfigurations = (
 				23DBDD4718B1CD0E002E8717 /* Debug */,
 				23DBDD4818B1CD0E002E8717 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		23F62C7C18B3BCA000E06AAC /* Build configuration list for PBXNativeTarget "ostest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				23F62C7D18B3BCA000E06AAC /* Debug */,
+				23F62C7E18B3BCA000E06AAC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
