@@ -52,7 +52,7 @@ public:
 
 #define CORO_Define CORO_Define_Impl
 
-#define CORO_DefineStruct(name) struct COROData CORO_Name(name) = { NULL, 0 };
+#define CORO_DefineStruct(name) struct COROData CORO_Name(name) = { NULL, 0 }
 
 #if defined(__CPP11__) || defined(__C__)
 # define CORO_Define_Impl(name) CORO_DefineStruct(name)
@@ -70,7 +70,7 @@ public:
     __coData->flags |= CORO_FLAG_SUSPEND;\
     __coResumePosition();\
     __coSavePosition();\
-    __coLabelPosition();
+    __coLabelPosition()
 
 
 #if defined(__CPP11__) || defined(__C__)

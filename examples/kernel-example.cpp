@@ -8,7 +8,7 @@
 #define WO_TASK2 fizz
 #define WO_TASK3 buzz
 
-#define WO_TASK10 sleep
+#define WO_TASK99 sleep
 
 #include <wolffia.h>
 
@@ -69,12 +69,24 @@ void sleep() {
     }
 }
 
-int main(void) {
-    
+void setup() {
     lockAcquire(fizzLock);
     lockAcquire(buzzLock);
+}
+
+void loop() {
+    WO_RunOS();
+}
+
+#ifndef ARDUINO
+int main(void) {
     
-    WO_RunOS()
+    setup();
+    
+    while (true) {
+        loop();
+    }
     
     return 0;
 }
+#endif

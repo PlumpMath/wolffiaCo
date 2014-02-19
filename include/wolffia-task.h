@@ -9,12 +9,14 @@
 #ifndef wolffiaCo_wolffia_task_h
 #define wolffiaCo_wolffia_task_h
 
-#define __woRunTask(task)\
-    __woSetupTask(task);\
-    __woSetAsCurrent(task);\
-    task();
+#define __woSetupTask(task) static CORO_DefineStruct(task)
+#define __woSetAsCurrent(data) CORO_Name(currentCoroData) = &CORO_Name(data)
 
-#define WO_InitTask() CORO_Init_Impl(COROData, *CORO_Name(currentCoroData));
+#define __woRunTask(task, data)\
+    __woSetAsCurrent(data);\
+    task()
+
+#define WO_InitTask() CORO_Init_Impl(COROData, *CORO_Name(currentCoroData))
 
 #include "wolffia-task-gen.h"
 
