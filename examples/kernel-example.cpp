@@ -1,5 +1,14 @@
+//
+//  kernel-example.cpp
+//  wolffiaCo
+//
+//  Created by Timo Reunanen on 19/02/2014.
+//  Copyright (c) 2014 Timo Reunanen. All rights reserved.
+//
 #include <stdio.h>
 #include <unistd.h>
+
+#include <wolffia.h>
 
 //////////////////////////////////////////////////////////////////
 // Setup wollfia tasks
@@ -7,32 +16,41 @@
 #define WO_TASK1 fizzbuzz()
 #define WO_TASK2 fizz()
 #define WO_TASK3 buzz()
+#define WO_TASK10 show_counter()
 
 #define WO_TASK30 sleep(20)
 
-#include <wolffia.h>
+//////////////////////////////////////////////////////////////////
+// Events
+
+enum {
+    fizzEvent,
+    buzzEvent,
+    countEvent
+};
 
 //////////////////////////////////////////////////////////////////
-// Setup locks
+// Initialize wolffia
 
-#define fizzLock LOCK_1
-#define buzzLock LOCK_2
+#include <wolffia-init.h>
 
 //////////////////////////////////////////////////////////////////
+
 
 void fizzbuzz() {
     WO_InitTask();
-    
-    static int counter = 1;
-    
+
+    static uint16_t counter = 0;
+
     while (true) {
+        counter++;
+        
         if(counter != 1) printf(", ");
         
-        if((counter % 3) == 0) lockRelease(fizzLock);
-        if((counter % 5) == 0) lockRelease(buzzLock);
-        if((counter % 5) != 0 && (counter % 3) != 0) printf("%i", counter);
+        dispatchEvent(countEvent, 0);
+        dispatchEvent(fizzEvent, (counter % 3) == 0);
+        dispatchEvent(buzzEvent, (counter % 5) == 0);
         
-        counter++;
         yield();
     }
 }
@@ -40,18 +58,65 @@ void fizzbuzz() {
 void fizz() {
     WO_InitTask();
     
+    static uint8_t evt = 0;
+    
     while (true) {
-        lockWaitAndAcquire(fizzLock);
-        printf("Fizz");
+        waitEvent(evt);
+        
+        handleEvent(evt, fizzEvent) {
+            if (getEventData(evt)) {
+                printf("Fizz");
+            }
+        }
+        
+        evt++;
     }
 }
 
 void buzz() {
     WO_InitTask();
     
+    static uint8_t evt = 0;
+    
     while (true) {
-        lockWaitAndAcquire(buzzLock);
-        printf("Buzz");
+        waitEvent(evt);
+        
+        handleEvent(evt, buzzEvent) {
+            if (getEventData(evt)) {
+                printf("Buzz");
+            }
+        }
+        
+        evt++;
+    }
+}
+
+void show_counter() {
+    int hasCount = 0;
+    
+    WO_InitTask();
+    
+    static uint8_t evt = 0;
+    static uint16_t counter = 0;
+    
+    while (true) {
+        waitEvent(evt);
+        
+        handleEvent(evt, countEvent) {
+            counter++;
+        }
+        
+        handleEvent2(evt, fizzEvent, buzzEvent) {
+            if (!getEventData(evt)) {
+                hasCount++;
+            }
+        }
+        
+        if (hasCount >= 2) {
+            printf("%i", counter);
+        }
+        
+        evt++;
     }
 }
 
@@ -70,8 +135,6 @@ void sleep(int ms) {
 }
 
 void setup() {
-    lockAcquire(fizzLock);
-    lockAcquire(buzzLock);
 }
 
 void loop() {
@@ -80,6 +143,7 @@ void loop() {
 
 #ifndef ARDUINO
 int main(void) {
+    
     setup();
     
     while (true) {

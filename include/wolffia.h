@@ -11,10 +11,10 @@
 
 #include "coroutine.h"
 
+#include "wolffia-events.h"
+
 #define __woConcat_(a,b) a##b
 #define __woConcat(a,b) __woConcat2(a,b)
-
-#include "wolffia-task.h"
 
 #define WO_Run() __woRun()
 
