@@ -39,7 +39,13 @@ extern event_t event_buffer[Eventbuffer_Mask+1];
 
 #define hasEvents(pos) (event_position != (pos))
 
-#define dispatchEvent(evt, data) do { event_buffer[(event_position++) & Eventbuffer_Mask] = (evt) | ((data) << Event_Size); } while(0)
+#define dispatchEvent(evt, data)\
+    do {\
+        int pos;\
+        ATOMIC_BLOCK { pos = event_position; event_position++; }\
+        event_buffer[(pos) & Eventbuffer_Mask] = (evt) | ((data) << Event_Size);\
+    } while(0)
+
 #define getEvent(pos) (event_buffer[pos & Eventbuffer_Mask] & Event_Mask)
 #define getEventData(pos) ((event_buffer[pos & Eventbuffer_Mask] >> Event_Size) & Event_Mask)
 

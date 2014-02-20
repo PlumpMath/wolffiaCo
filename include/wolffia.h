@@ -20,4 +20,10 @@
 
 extern COROData *CORO_Name(currentCoroData);
 
+#ifdef __AVR__
+# define ATOMIC_BLOCK ATOMIC_BLOCK(ATOMIC_RESTORESTATE)
+#else
+# define ATOMIC_BLOCK
+#endif
+
 #endif
