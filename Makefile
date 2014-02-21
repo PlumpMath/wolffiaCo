@@ -43,7 +43,11 @@ zip:
 	(cd arduino && zip ../arduino/wolffiaCo.zip *)
 	(cd src && zip ../arduino/wolffiaCo.zip *)
 	(cd include && zip ../arduino/wolffiaCo.zip *)
-	zip -r arduino/wolffiaCo.zip examples/*
+	zip -r arduino/wolffiaCo.zip examples/*                # because XCode thinks this is C file */
+
+release: zip
+	git add arduino/wolffiaCo.zip
+	git commit -em "New release zip"
 
 clean:
 	rm -rf example *.avr test test-c11
