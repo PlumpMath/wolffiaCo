@@ -9,6 +9,10 @@
 #ifndef wolffiaCo_wolffia_task_h
 #define wolffiaCo_wolffia_task_h
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #define __woCheck_Event(id) __woJmpPos = &&id; goto __wo_check_event; id:;
 
 #define __woRunTask(id, task)\
@@ -67,4 +71,9 @@ __wo_check_event:\
 
 #include "wolffia-task-gen.h"
 
+#ifdef __cplusplus
+}
+#endif
+
+    
 #endif
