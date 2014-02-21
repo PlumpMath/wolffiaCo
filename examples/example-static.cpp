@@ -9,21 +9,21 @@
 #include <coroutine.h>
 
 #ifdef FUNC1
-CORO_Define(Func1)
+CORO_Define(Func1);
 void func1() {
     CORO_Init(Func1);
 }
 #endif
 
 #ifdef FUNC2
-CORO_Define(Func2)
+CORO_Define(Func2);
 void func2() {
     CORO_Init(Func2);
 }
 #endif
 
 #ifdef FUNC3
-CORO_Define(Func3)
+CORO_Define(Func3);
 void func3() {
     CORO_Init(Func3);
 }

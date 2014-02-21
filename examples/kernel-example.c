@@ -6,8 +6,11 @@
 //  Copyright (c) 2014 Timo Reunanen. All rights reserved.
 //
 #include <stdio.h>
-#include <unistd.h>
 #include <stdbool.h>
+
+#ifndef __AVR__
+# include <time.h>
+#endif
 
 #include <wolffia.h>
 
@@ -105,10 +108,13 @@ void sleep_ms(int ms) {
     WO_InitTask();
     
     while (true) {
-#ifdef ARDUINO
-        delay(ms);
+#if defined(ARDUINO)
+#elif defined(__AVR__)
 #else
-        usleep(ms*1000);
+        struct timespec reqtime;
+        reqtime.tv_sec = 0;
+        reqtime.tv_nsec = ms*1000000;
+        nanosleep(&reqtime, NULL);
         fflush(stdout);
 #endif
         yield();
