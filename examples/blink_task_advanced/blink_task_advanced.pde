@@ -60,11 +60,11 @@ void blinkListener(uint8_t event) {
   while(true) {
     yieldUntil(event == blinkEvent);
     
-    time = millis();    
+    time = millis() + 1000;    
 
     dispatchEvent(blinkOnEvent, 0);   
     
-    yieldUntil(millis() > time+1000);
+    yieldUntil(millis() > time);
     
     dispatchEvent(blinkOffEvent, 0);   
   }
@@ -86,11 +86,11 @@ void blinker() {
   static long time;
   
   while(true) {
-    time = millis();
+    time = millis() + 2000;
  
     dispatchEvent(blinkEvent, 0);
 
-    yieldUntil(millis() > time+2000);    
+    yieldUntil(millis() > time);    
   }
 }
 
