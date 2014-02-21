@@ -18,24 +18,31 @@
 // Setup wollfia tasks
 
 #define WO_TASK1 fizzbuzz()
-#define WO_TASK30 sleep_ms(20)
-
-#define WO_LISTENER1 fizzEvent: fizz(event, data); show_counter()
-#define WO_LISTENER2 buzzEvent: buzz(event, data); show_counter()
+#define WO_TASK2 sleep_ms(20)
 
 //////////////////////////////////////////////////////////////////
 // Events
+//
+// Uses default settings:
+// 32 events in buffer, 6bit event ID and 2bit data
 
 enum {
     // High priority events
-    fizzEvent,
-    buzzEvent,
+    countEvent,
+    startEvent,
     
-    HIGH_PRIORITY_MARKER,
+    EVENT_PRIORITY_MARKER,
     
     // Normal priority events
-    countEvent
+    fizzEvent,
+    buzzEvent,
 };
+
+#define WO_LISTENER1 fizzEvent: fizz(event, data); show_counter(event, data)
+#define WO_LISTENER2 buzzEvent: buzz(event, data); show_counter(event, data)
+
+#define WO_LISTENER3 countEvent: show_counter(event, data)
+#define WO_LISTENER4 startEvent: show_counter(event, data)
 
 //////////////////////////////////////////////////////////////////
 // Initialize wolffia
@@ -51,6 +58,8 @@ void fizzbuzz() {
     static uint16_t counter = 0;
 
     while (true) {
+        dispatchEvent(startEvent, 0);
+        
         counter++;
         
         if(counter != 1) printf(", ");
@@ -75,32 +84,33 @@ void buzz(uint8_t event, uint8_t data) {
     printf("Buzz");
 }
 
-void show_counter() {
-    int hasCount = 0;
-    
-    WO_InitTask();
-    
-    static uint8_t evt = 0;
+void show_counter(uint8_t event, uint8_t data) {
+    static int flags = 0;
     static uint16_t counter = 0;
     
-    while (true) {
-        waitEvent(evt);
-        
-        handleEvent(evt, countEvent) {
+    switch (event) {
+        case startEvent:
+            flags = 0;
+            break;
+            
+        case countEvent:
             counter++;
-        }
-        
-        handleEvent2(evt, fizzEvent, buzzEvent) {
-            if (!getEventData(evt)) {
-                hasCount++;
-            }
-        }
-        
-        if (hasCount >= 2) {
-            printf("%i", counter);
-        }
-        
-        evt++;
+            break;
+            
+        case fizzEvent:
+            flags |= data ? 0 : 1;
+            break;
+            
+        case buzzEvent:
+            flags |= data ? 0 : 2;
+            break;
+            
+        default:
+            break;
+    }
+    
+    if (flags == 0x3) {
+        printf("%i", counter);
     }
 }
 
@@ -125,7 +135,7 @@ void setup() {
 }
 
 void loop() {
-    WO_Run(HIGH_PRIORITY_MARKER);
+    WO_Run(EVENT_PRIORITY_MARKER);
 }
 
 #ifndef ARDUINO
