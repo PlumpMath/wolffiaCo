@@ -5,7 +5,7 @@ For now it's only recommended to test this project because newer version/commit 
 wolffiaCo
 =========
 
-Simple stackless coroutine based non preemptive task scheduler library for tiny devices e.g. [Atmel's Attiny](http://www.atmel.com/products/microcontrollers/avr/tinyavr.aspx) family.
+Simple stackless coroutine based non preemptive task scheduler for tiny devices e.g. [Atmel's Attiny](http://www.atmel.com/products/microcontrollers/avr/tinyavr.aspx) family.
 
 wolffiaCo name comes from [wolffia](http://en.wikipedia.org/wiki/Wolffia) which is genus which includes smallest flowering plants on Earth.
 
@@ -13,17 +13,17 @@ Based on [ProtoThreads](http://dunkels.com/adam/pt/) by Adam Dunkels and uses [L
 
 ### Installation
 
-###### OS X
+**OS X**
 
 ```bash
 $ cd ~/Documents/Arduino/libraries/
 $ git clone https://github.com/parkerkane/wolffiaCo.git
 ```
 
-###### Linux
+**Linux**
 TODO
 
-###### Windows
+**Windows**
 
 ```
 $ cd "My Documents\Arduino\libraries"
