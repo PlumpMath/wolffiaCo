@@ -14,11 +14,10 @@
 // Setup wollfia tasks
 
 #define WO_TASK1 fizzbuzz()
-#define WO_TASK10 show_counter()
 #define WO_TASK30 sleep(20)
 
-#define WO_LISTENER1 fizzEvent: fizz(event, data)
-#define WO_LISTENER2 buzzEvent: buzz(event, data)
+#define WO_LISTENER1 fizzEvent: fizz(event, data); show_counter()
+#define WO_LISTENER2 buzzEvent: buzz(event, data); show_counter()
 
 //////////////////////////////////////////////////////////////////
 // Events
@@ -61,15 +60,15 @@ void fizzbuzz() {
 }
 
 void fizz(uint8_t event, uint8_t data) {
-    if (event == fizzEvent && data) {
-        printf("Fizz");
-    }
+    if (!data) return;
+
+    printf("Fizz");
 }
 
 void buzz(uint8_t event, uint8_t data) {
-    if (event == buzzEvent && data) {
-        printf("Buzz");
-    }
+    if (!data) return;
+    
+    printf("Buzz");
 }
 
 void show_counter() {

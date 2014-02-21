@@ -9,7 +9,7 @@
 #ifndef wolffiaCo_wolffia_task_h
 #define wolffiaCo_wolffia_task_h
 
-#define __woCheck_Event(id) __woJmpPos = &&id; if (hasEvents(__woHighEventPos) || hasEvents(__woLowEventPos)) {goto __wo_check_event;} id:;
+#define __woCheck_Event(id) __woJmpPos = &&id; goto __wo_check_event; id:;
 
 #define __woRunTask(id, task)\
     task;\
@@ -26,27 +26,31 @@
     void *__woJmpPos;\
     uint8_t __woLowEventPos=0, __woHighEventPos=0, event, data;\
     \
-    __wo_start:\
+__wo_start:\
     __woRunBlock;\
-    \
     goto __wo_start;\
     \
-    __wo_check_event:\
+__wo_check_event:\
+    /* Check it there is new high priority events */\
     if (hasEvents(__woHighEventPos)){\
         event = getEvent(__woHighEventPos);\
         data = getEventData(__woHighEventPos);\
         __woHighEventPos++;\
         \
+        /* Test if event is low priority, above the marker will be ignored */\
         if (event > priority_marker) goto __wo_check_event;\
     \
+    /* Check it there is new low priority events */\
     } else if (hasEvents(__woLowEventPos)) {\
         event = getEvent(__woLowEventPos);\
         data = getEventData(__woLowEventPos);\
         __woLowEventPos++;\
         \
+        /* Test if event is high priority, below the marker will be ignored */\
         if (event < priority_marker) goto __wo_check_event;\
     \
     } else {\
+        /* No events in buffer, will continue with tasks */\
         goto *__woJmpPos;\
     }\
     \
