@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Timo Reunanen. All rights reserved.
 //
 
-#ifdef __AVR__
+#if defined(__AVR__) && !defined(ARDUINO)
 #include <util/atomic.h>
 #endif
 
@@ -16,7 +16,7 @@ unsigned short __coroutine_locks = 0;
 
 bool lockAcquire(unsigned short id) {
 
-#ifdef __AVR__
+#if defined(__AVR__) && !defined(ARDUINO)
     ATOMIC_BLOCK(ATOMIC_RESTORESTATE)
 #endif
     {
@@ -29,7 +29,7 @@ bool lockAcquire(unsigned short id) {
 }
 
 void lockRelease(unsigned short id) {
-#ifdef __AVR__
+#if defined(__AVR__) && !defined(ARDUINO)
     ATOMIC_BLOCK(ATOMIC_RESTORESTATE)
 #endif
     {
@@ -38,7 +38,7 @@ void lockRelease(unsigned short id) {
 }
 
 bool lockTest(unsigned short id) {
-#ifdef __AVR__
+#if defined(__AVR__) && !defined(ARDUINO)
     ATOMIC_BLOCK(ATOMIC_RESTORESTATE)
 #endif
     {
