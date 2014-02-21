@@ -24,7 +24,7 @@ struct COROData {
     unsigned char flags;
 };
 
-#ifndef __CPP11__
+#if !defined(__CPP11__) && !defined(__C__)
 
 class CORODataClass {
 public:
@@ -75,7 +75,7 @@ public:
 
 #if defined(__CPP11__) || defined(__C__)
 #  define CORO_Init(name, ret...)    CORO_Init_Impl(COROData, CORO_Name(name), ##ret)
-#  define CORO_Simple(ret...) static CORO_Define_Impl(__CORO); CORO_Init_Impl(COROData, CORO_Name(__CORO), ##ret)
+#  define CORO_Simple(ret...) static CORO_Define_Impl(__CORO); CORO_Init_Impl(struct COROData, CORO_Name(__CORO), ##ret)
 #else
 #  define CORO_Init(name, ret...)    CORO_Init_Impl(CORODataClass, CORO_Name(name), ##ret)
 #  define CORO_Simple(ret...) static CORO_DefineStruct(__CORO); CORO_Init_Impl(COROData, CORO_Name(__CORO), ##ret)

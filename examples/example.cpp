@@ -31,7 +31,7 @@ int even() {
     }
 }
 
-CORO_Define(Fibb)
+CORO_Define(Fibb);
 int fibb() {
     // Initialize Coroutine
     CORO_Init(Fibb, -1);
@@ -63,7 +63,7 @@ public:
     int a,b;
     
     // Define attributes for Fibb coroutine.
-    CORO_Define(Fibb)
+    CORO_Define(Fibb);
     int operator()() {
         // Initialize Coroutine
         CORO_Init(Fibb, -1);

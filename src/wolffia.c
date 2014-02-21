@@ -8,4 +8,3 @@
 
 #include "wolffia.h"
 
-COROData *CORO_Name(currentCoroData);

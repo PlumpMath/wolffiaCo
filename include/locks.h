@@ -9,6 +9,8 @@
 #ifndef wolffiaCo_locks_h
 #define wolffiaCo_locks_h
 
+#include <stdbool.h>
+
 #include "coroutine.h"
 
 #define LOCK_1  0x0001

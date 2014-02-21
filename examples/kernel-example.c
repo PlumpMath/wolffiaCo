@@ -7,6 +7,7 @@
 //
 #include <stdio.h>
 #include <unistd.h>
+#include <stdbool.h>
 
 #include <wolffia.h>
 
@@ -14,7 +15,7 @@
 // Setup wollfia tasks
 
 #define WO_TASK1 fizzbuzz()
-#define WO_TASK30 sleep(20)
+#define WO_TASK30 sleep_ms(20)
 
 #define WO_LISTENER1 fizzEvent: fizz(event, data); show_counter()
 #define WO_LISTENER2 buzzEvent: buzz(event, data); show_counter()
@@ -100,7 +101,7 @@ void show_counter() {
     }
 }
 
-void sleep(int ms) {
+void sleep_ms(int ms) {
     WO_InitTask();
     
     while (true) {

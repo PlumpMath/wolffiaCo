@@ -18,8 +18,6 @@
 
 #define WO_Run(priority_marker) __woRun(priority_marker)
 
-extern COROData *CORO_Name(currentCoroData);
-
 #ifdef __AVR__
 # define ATOMIC_BLOCK ATOMIC_BLOCK(ATOMIC_RESTORESTATE)
 #else
