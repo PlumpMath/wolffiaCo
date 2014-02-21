@@ -16,7 +16,7 @@
 		2377EE3118B000690045026E /* example-class.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2377EE2C18B000690045026E /* example-class.cpp */; };
 		2377EE3318B000690045026E /* example-simple.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2377EE2D18B000690045026E /* example-simple.cpp */; };
 		2377EE3518B000690045026E /* example-static.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2377EE2E18B000690045026E /* example-static.cpp */; };
-		238E1C0418B44F160058D493 /* kernel-example.c in Sources */ = {isa = PBXBuildFile; fileRef = 23F62C8018B3BD0E00E06AAC /* kernel-example.c */; };
+		238E1C0418B44F160058D493 /* example-task.c in Sources */ = {isa = PBXBuildFile; fileRef = 23F62C8018B3BD0E00E06AAC /* example-task.c */; };
 		23B9B07318AF9DD9008E2250 /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = 23B9B06B18AF9D1B008E2250 /* Makefile */; };
 		23DBDD4218B1CD0E002E8717 /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = 23B9B06B18AF9D1B008E2250 /* Makefile */; };
 		23E3C0C918B527C500E145BC /* wolffia-buffer.c in Sources */ = {isa = PBXBuildFile; fileRef = 23E3C0C718B527C500E145BC /* wolffia-buffer.c */; };
@@ -96,7 +96,7 @@
 		23F62C6B18B38CDA00E06AAC /* locks.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = locks.c; sourceTree = "<group>"; };
 		23F62C6C18B38CDA00E06AAC /* wolffia.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = wolffia.c; sourceTree = "<group>"; };
 		23F62C7F18B3BCA000E06AAC /* ostest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ostest; sourceTree = BUILT_PRODUCTS_DIR; };
-		23F62C8018B3BD0E00E06AAC /* kernel-example.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "kernel-example.c"; path = "examples/kernel-example.c"; sourceTree = "<group>"; };
+		23F62C8018B3BD0E00E06AAC /* example-task.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "example-task.c"; path = "examples/example-task.c"; sourceTree = "<group>"; };
 		23F9205018B54277000D09F0 /* wolffia-events.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "wolffia-events.c"; sourceTree = "<group>"; };
 		23F9205118B54277000D09F0 /* wolffia-events.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "wolffia-events.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -160,7 +160,7 @@
 		23B9B07C18AF9E5F008E2250 /* Examples */ = {
 			isa = PBXGroup;
 			children = (
-				23F62C8018B3BD0E00E06AAC /* kernel-example.c */,
+				23F62C8018B3BD0E00E06AAC /* example-task.c */,
 				2341E87D18B2F9FC005C29B7 /* fizzbuzz.cpp */,
 				2341E87E18B2F9FC005C29B7 /* fizzbuzz.h */,
 				2341E87618B25AF7005C29B7 /* example.cpp */,
@@ -351,7 +351,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				23F62C8318B3BD9300E06AAC /* locks.c in Sources */,
-				238E1C0418B44F160058D493 /* kernel-example.c in Sources */,
+				238E1C0418B44F160058D493 /* example-task.c in Sources */,
 				23F9205218B54277000D09F0 /* wolffia-events.c in Sources */,
 				23F62C7618B3BCA000E06AAC /* Makefile in Sources */,
 				23F62C7918B3BCA000E06AAC /* wolffia.c in Sources */,
