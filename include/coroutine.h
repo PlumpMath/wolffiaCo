@@ -60,12 +60,14 @@ public:
 # define CORO_Define_Impl(name) CORODataClass CORO_Name(name);
 #endif
 
-#define CORO_Init_Impl(dataType, dataValue, ret...)\
-    dataType *__coData = &(dataValue);\
+#define __coReset\
     if (__coData->flags & CORO_FLAG_RESET) {\
         __coData->state = NULL;\
         __coData->flags &= ~(CORO_FLAG_RESET | CORO_FLAG_SUSPEND);\
     }\
+
+#define CORO_Init_Impl(dataType, dataValue, ret...)\
+    dataType *__coData = &(dataValue);\
     if (__coData->flags & CORO_FLAG_SUSPEND) return ret;\
     __coData->flags |= CORO_FLAG_SUSPEND;\
     __coResumePosition();\
