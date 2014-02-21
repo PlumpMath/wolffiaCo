@@ -13,7 +13,7 @@ Based on [ProtoThreads](http://dunkels.com/adam/pt/) by Adam Dunkels and uses [L
 
 ### Installation
 
-1. Get [latests release](https://github.com/parkerkane/wolffiaCo/raw/master/arduino/wolffiaCo.zip)
+1. Get latests [release](https://github.com/parkerkane/wolffiaCo/raw/master/arduino/wolffiaCo.zip) or bleeding edge [develop release](https://github.com/parkerkane/wolffiaCo/raw/develop/arduino/wolffiaCo.zip)
 2. In Arduino go `Sketch > Import library... > Add library...`
 3. Locate `wolffiaCo.zip`
 4. Test run with `File > Examples > wolffiaCo > blink` example
