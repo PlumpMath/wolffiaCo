@@ -20,10 +20,10 @@ Based on [ProtoThreads](http://dunkels.com/adam/pt/) by Adam Dunkels and uses [L
 
 More information about installing libraries can found from Arduino's [websites](http://arduino.cc/en/Guide/Libraries) or from [Adafruit](http://learn.adafruit.com/adafruit-all-about-arduino-libraries-install-use).
 
+Arduino
+-------
 
-
-Arduino IDE
------------
+Because everybody loves blinking leds, here is few examples how to use this library.
 
 ###### Task example
 
@@ -147,7 +147,7 @@ int led = 13;
 
 class Blink {
 public:
-  int time;
+  long time;
 
   Blink() : time(0) {}
 
