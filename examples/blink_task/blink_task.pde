@@ -2,11 +2,15 @@
 
 //////////////////////////////////////////////////////////////////
 // Setup wollfia tasks
+//
+// Tasks are called all the time in a loop
 
 #define WO_TASK1 blinker()
 
 //////////////////////////////////////////////////////////////////
 // Events
+//
+// Event listeners are only called when you dispatch an event
 //
 // Uses default settings:
 // 32 events in buffer, 6bit event ID and 2bit data
@@ -24,8 +28,8 @@ enum {
 
 #define WO_LISTENER1 setupEvent: setupListener(event, data)
 
-#define WO_LISTENER2 blinkOnEvent: blinkOnListener(event, data)
-#define WO_LISTENER3 blinkOffEvent: blinkOffListener(event, data)
+#define WO_LISTENER2 blinkOnEvent: blinkOnListener() // event and data are optionals
+#define WO_LISTENER3 blinkOffEvent: blinkOffListener()
 
 //////////////////////////////////////////////////////////////////
 // Initialize wolffia
@@ -38,18 +42,21 @@ enum {
 int led = 13;
 
 void setupListener(uint8_t event, uint8_t data) {
-  pinMode(led, OUTPUT); 
+  // Event data tells which we use
+  pinMode(led, data); 
 }
 
-void blinkOnListener(uint8_t event, uint8_t data) {
+void blinkOnListener() {
   digitalWrite(led, HIGH);
 }
 
-void blinkOffListener(uint8_t event, uint8_t data) {
+void blinkOffListener() {
   digitalWrite(led, LOW);
 }
 
 void blinker() {
+  // Initialize wolffia task, here we check last known state
+  // and jump back there
   WO_InitTask();
   
   static long time;
@@ -66,11 +73,12 @@ void blinker() {
 }
 
 void setup() {
-  dispatchEvent(setupEvent, 0);  
+  // Dispatch setupEvent with OUTPUT as data for listener
+  dispatchEvent(setupEvent, OUTPUT);  
 }
 
 void loop() {
-  
+  // Run the main loop
   WO_Run(EVENT_PRIORITY_MARKER);
   
 }
