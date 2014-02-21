@@ -34,20 +34,24 @@ __wo_check_event:\
     /* Check it there is new high priority events */\
     if (hasEvents(__woHighEventPos)){\
         event = getEvent(__woHighEventPos);\
+        /* Test if event is low priority, above the marker will be ignored */\
+        if (event > priority_marker) {\
+            __woHighEventPos++;\
+            goto __wo_check_event;\
+        }\
         data = getEventData(__woHighEventPos);\
         __woHighEventPos++;\
-        \
-        /* Test if event is low priority, above the marker will be ignored */\
-        if (event > priority_marker) goto __wo_check_event;\
     \
     /* Check it there is new low priority events */\
     } else if (hasEvents(__woLowEventPos)) {\
         event = getEvent(__woLowEventPos);\
+        /* Test if event is high priority, below the marker will be ignored */\
+        if (event < priority_marker) {\
+            __woLowEventPos++;\
+            goto __wo_check_event;\
+        }\
         data = getEventData(__woLowEventPos);\
         __woLowEventPos++;\
-        \
-        /* Test if event is high priority, below the marker will be ignored */\
-        if (event < priority_marker) goto __wo_check_event;\
     \
     } else {\
         /* No events in buffer, will continue with tasks */\
