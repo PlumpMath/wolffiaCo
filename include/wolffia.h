@@ -16,7 +16,7 @@
 #define __woConcat_(a,b) a##b
 #define __woConcat(a,b) __woConcat2(a,b)
 
-#define WO_Run() __woRun()
+#define WO_Run(priority_marker) __woRun(priority_marker)
 
 extern COROData *CORO_Name(currentCoroData);
 

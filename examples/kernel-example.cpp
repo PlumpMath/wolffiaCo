@@ -14,18 +14,23 @@
 // Setup wollfia tasks
 
 #define WO_TASK1 fizzbuzz()
-#define WO_TASK2 fizz()
-#define WO_TASK3 buzz()
 #define WO_TASK10 show_counter()
-
 #define WO_TASK30 sleep(20)
+
+#define WO_LISTENER1 fizzEvent: fizz(event, data)
+#define WO_LISTENER2 buzzEvent: buzz(event, data)
 
 //////////////////////////////////////////////////////////////////
 // Events
 
 enum {
+    // High priority events
     fizzEvent,
     buzzEvent,
+    
+    HIGH_PRIORITY_MARKER,
+    
+    // Normal priority events
     countEvent
 };
 
@@ -55,39 +60,15 @@ void fizzbuzz() {
     }
 }
 
-void fizz() {
-    WO_InitTask();
-    
-    static uint8_t evt = 0;
-    
-    while (true) {
-        waitEvent(evt);
-        
-        handleEvent(evt, fizzEvent) {
-            if (getEventData(evt)) {
-                printf("Fizz");
-            }
-        }
-        
-        evt++;
+void fizz(uint8_t event, uint8_t data) {
+    if (event == fizzEvent && data) {
+        printf("Fizz");
     }
 }
 
-void buzz() {
-    WO_InitTask();
-    
-    static uint8_t evt = 0;
-    
-    while (true) {
-        waitEvent(evt);
-        
-        handleEvent(evt, buzzEvent) {
-            if (getEventData(evt)) {
-                printf("Buzz");
-            }
-        }
-        
-        evt++;
+void buzz(uint8_t event, uint8_t data) {
+    if (event == buzzEvent && data) {
+        printf("Buzz");
     }
 }
 
@@ -138,7 +119,7 @@ void setup() {
 }
 
 void loop() {
-    WO_Run();
+    WO_Run(HIGH_PRIORITY_MARKER);
 }
 
 #ifndef ARDUINO
