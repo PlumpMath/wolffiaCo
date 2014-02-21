@@ -38,5 +38,13 @@ test: Makefile tests/maintest.cpp src/locks.c include/coroutine.h src/wolffia.c 
 	g++ -Iinclude -std=c++11 -o test-c11 tests/maintest.cpp src/locks.c src/wolffia.c
 	./test-c11
 
+zip:
+	-rm arduino/wolffiaCo.zip
+	(cd arduino && zip ../arduino/wolffiaCo.zip *)
+	(cd src && zip ../arduino/wolffiaCo.zip *)
+	(cd include && zip ../arduino/wolffiaCo.zip *)
+	zip -r arduino/wolffiaCo.zip examples/*
+
 clean:
 	rm -rf example *.avr test test-c11
+	-rm wolffiaCo.zip
