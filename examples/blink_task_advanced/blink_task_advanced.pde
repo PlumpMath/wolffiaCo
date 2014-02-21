@@ -7,7 +7,7 @@
 
 #define WO_TASK1 blinker()
 
-// Because we need to update coroutine to send bogus event for listener
+// Because we need to update coroutines state, we need send bogus event for listener
 #define WO_TASK2 blinkListener(ignoreMe)
 
 //////////////////////////////////////////////////////////////////
