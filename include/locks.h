@@ -30,11 +30,19 @@
 #define LOCK_15 0x4000
 #define LOCK_16 0x8000
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 bool lockAcquire(unsigned short id);
 void lockRelease(unsigned short id);
 bool lockTest(unsigned short id);
 
 #define lockWaitAndAcquire(id, ret...) yieldUntil(lockAcquire(id), ##ret)
 #define lockWait(id, ret...) yieldWhile(lockTest(id), ##ret)
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif

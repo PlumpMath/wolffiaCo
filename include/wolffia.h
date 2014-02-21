@@ -19,10 +19,10 @@
 #define WO_Run(priority_marker) __woRun(priority_marker)
 
 #ifdef __AVR__
-# include <util/atomic.h>
-# define __WO_ATOMIC_BLOCK ATOMIC_BLOCK(ATOMIC_RESTORESTATE)
+# include <avr/interrupt.h>
+# define __WO_ATOMIC_BLOCK(command) cli(); command; sei()
 #else
-# define __WO_ATOMIC_BLOCK
+# define __WO_ATOMIC_BLOCK(command) command
 #endif
 
 #endif

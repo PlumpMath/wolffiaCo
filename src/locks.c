@@ -6,8 +6,13 @@
 //  Copyright (c) 2014 Timo Reunanen. All rights reserved.
 //
 
-#if defined(__AVR__) && !defined(ARDUINO)
-#include <util/atomic.h>
+#if defined(__AVR__)
+# include <avr/interrupt.h>
+# define CLEARI cli()
+# define SETI sei()
+#else
+# define CLEARI
+# define SETI
 #endif
 
 #include <coroutine.h>
@@ -15,33 +20,25 @@
 unsigned short __coroutine_locks = 0;
 
 bool lockAcquire(unsigned short id) {
-
-#if defined(__AVR__) && !defined(ARDUINO)
-    ATOMIC_BLOCK(ATOMIC_RESTORESTATE)
-#endif
-    {
-        if ((__coroutine_locks & id) == id) return false;
-        
-        __coroutine_locks |= id;
-        
-        return true;
-    }
+    if (lockTest(id)) return false;
+    
+    CLEARI;
+    __coroutine_locks |= id;
+    SETI;
+    
+    return true;
 }
 
 void lockRelease(unsigned short id) {
-#if defined(__AVR__) && !defined(ARDUINO)
-    ATOMIC_BLOCK(ATOMIC_RESTORESTATE)
-#endif
-    {
-        __coroutine_locks &= ~id;
-    }
+    CLEARI;
+    __coroutine_locks &= ~id;
+    SETI;
 }
 
 bool lockTest(unsigned short id) {
-#if defined(__AVR__) && !defined(ARDUINO)
-    ATOMIC_BLOCK(ATOMIC_RESTORESTATE)
-#endif
-    {
-        return (__coroutine_locks & id) == id;
-    }
+    bool ret;
+    CLEARI;
+    ret = (__coroutine_locks & id) == id;
+    SETI;
+    return ret;
 }

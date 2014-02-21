@@ -43,7 +43,19 @@ zip:
 	(cd arduino && zip ../arduino/wolffiaCo.zip *)
 	(cd src && zip ../arduino/wolffiaCo.zip *)
 	(cd include && zip ../arduino/wolffiaCo.zip *)
-	zip -r arduino/wolffiaCo.zip examples/*
+	zip -r arduino/wolffiaCo.zip examples/*                # because XCode thinks this is C file */
+
+release: zip
+	git add arduino/wolffiaCo.zip
+	git commit -em "New release zip"
+
+install:
+	rm -rf ~/Documents/Arduino/libraries/wolffiaCo/
+	mkdir ~/Documents/Arduino/libraries/wolffiaCo/
+	cp arduino/*.txt ~/Documents/Arduino/libraries/wolffiaCo/      #*/
+	cp include/* ~/Documents/Arduino/libraries/wolffiaCo/      #*/
+	cp src/* ~/Documents/Arduino/libraries/wolffiaCo/          #*/
+	cp -r examples ~/Documents/Arduino/libraries/wolffiaCo/  #*/
 
 clean:
 	rm -rf example *.avr test test-c11
