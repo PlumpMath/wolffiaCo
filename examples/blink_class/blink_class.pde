@@ -14,7 +14,7 @@ int led = 13;
 
 class Blink {
 public:
-  int time;
+  long time;
 
   Blink() : time(0) {}
 
