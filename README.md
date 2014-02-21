@@ -13,22 +13,10 @@ Based on [ProtoThreads](http://dunkels.com/adam/pt/) by Adam Dunkels and uses [L
 
 ### Installation
 
-**OS X**
-
-```bash
-$ cd ~/Documents/Arduino/libraries/
-$ git clone https://github.com/parkerkane/wolffiaCo.git
-```
-
-**Linux**
-TODO
-
-**Windows**
-
-```
-$ cd "My Documents\Arduino\libraries"
-$ git clone https://github.com/parkerkane/wolffiaCo.git
-```
+1. Get [latests release](https://github.com/parkerkane/wolffiaCo/raw/master/arduino/wolffiaCo.zip)
+2. In Arduino go `Sketch > Import library... > Add library...`
+3. Locate `wolffiaCo.zip`
+4. Test run with `File > Examples > wolffiaCo > blink` example
 
 More information about installing libraries can found from Arduino's [websites](http://arduino.cc/en/Guide/Libraries) or from [Adafruit](http://learn.adafruit.com/adafruit-all-about-arduino-libraries-install-use).
 
