@@ -28,7 +28,8 @@ extern "C" {
 
 #define __woRun(priority_marker)\
     void *__woJmpPos = &&__wo_start;\
-    uint8_t __woLowEventPos=0, __woHighEventPos=0, event, data;\
+    uint8_t __woLowEventPos=0, __woHighEventPos=0;\
+    uint8_t event, data;\
     \
 __wo_start:\
     __woRunBlock;\

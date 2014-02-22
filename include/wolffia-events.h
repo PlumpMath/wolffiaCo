@@ -38,20 +38,19 @@ typedef uint8_t event_t;
 
 
 extern uint8_t event_position;
-
 extern event_t event_buffer[Eventbuffer_Mask+1];
 
 #define hasEvents(pos) (event_position != (pos))
 
 #define dispatchEvent(evt, data)\
     do {\
-        int pos;\
+        uint8_t pos;\
         __WO_ATOMIC_BLOCK(pos = event_position++); \
-        event_buffer[(pos) & Eventbuffer_Mask] = (evt) | ((data) << Event_Size);\
+        event_buffer[pos & Eventbuffer_Mask] = ((data) << Event_Size) | (evt);\
     } while(0)
 
-#define getEvent(pos) (event_buffer[pos & Eventbuffer_Mask] & Event_Mask)
-#define getEventData(pos) ((event_buffer[pos & Eventbuffer_Mask] >> Event_Size) & Event_Mask)
+#define getEvent(pos)     (event_buffer[pos & Eventbuffer_Mask] &  Event_Mask)
+#define getEventData(pos) (event_buffer[pos & Eventbuffer_Mask] >> Event_Size)
 
 #define waitEvent(pos) yieldUntil(hasEvents(pos))
 
