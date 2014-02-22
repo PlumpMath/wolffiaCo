@@ -33,6 +33,7 @@ extern "C" {
     \
 __wo_start:\
     __woRunBlock;\
+    __woJmpPos = &&__wo_start;\
     \
 __wo_check_event:\
     /* Check it there is new high priority events */\
