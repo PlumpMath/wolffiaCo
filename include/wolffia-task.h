@@ -27,12 +27,11 @@ extern "C" {
 #define __woFinalTask
 
 #define __woRun(priority_marker)\
-    void *__woJmpPos;\
+    void *__woJmpPos = &&__wo_start;\
     uint8_t __woLowEventPos=0, __woHighEventPos=0, event, data;\
     \
 __wo_start:\
     __woRunBlock;\
-    goto __wo_start;\
     \
 __wo_check_event:\
     /* Check it there is new high priority events */\
