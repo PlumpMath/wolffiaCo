@@ -16,7 +16,7 @@
 // Event listeners are only called when you dispatch an event
 //
 // Uses default settings:
-// 32 events in buffer, 6bit event ID and 2bit data
+// 32 events in buffer, 4bit event ID and 4bit data
 
 enum {
     // High priority events

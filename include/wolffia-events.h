@@ -26,7 +26,7 @@ typedef uint16_t event_t;
 #else
 typedef uint8_t event_t;
 
-#define Event_DefaultSize 6
+#define Event_DefaultSize 4
 
 #endif
 
