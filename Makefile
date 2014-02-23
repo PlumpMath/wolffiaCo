@@ -11,7 +11,7 @@ avr:
 	avr-g++ $(CFLAGS) -o example.avr examples/example.cpp src/locks.cpp examples/fizzbuzz.cpp src/wolffia.cpp
 
 	avr-g++ $(CFLAGS) -o example-simple.avr examples/example-simple.cpp
-	avr-g++ $(CFLAGS) -o example-kernel.avr examples/kernel-example.cpp src/wolffia.cpp src/wolffia-buffer.cpp src/wolffia-events.cpp
+	avr-g++ $(CFLAGS) -o example-kernel.avr examples/example-task.cpp src/wolffia.cpp src/wolffia-buffer.cpp src/wolffia-events.cpp
 
 	avr-g++ $(CFLAGS) -o example-static-0_funcs.avr examples/example-static.cpp
 	avr-g++ $(CFLAGS) -o example-static-1_func.avr examples/example-static.cpp -DFUNC1
@@ -23,7 +23,13 @@ avr:
 	avr-g++ $(CFLAGS) -o example-class-2_funcs.avr examples/example-class.cpp -DFUNC1 -DFUNC2
 	avr-g++ $(CFLAGS) -o example-class-3_funcs.avr examples/example-class.cpp -DFUNC1 -DFUNC2 -DFUNC3
 
+	avr-g++ $(CFLAGS) -o example-buffer-1.avr examples/example-buffer.cpp -DBUF1
+	avr-g++ $(CFLAGS) -o example-buffer-2.avr examples/example-buffer.cpp -DBUF1 -DBUF2
+	avr-g++ $(CFLAGS) -o example-buffer-3.avr examples/example-buffer.cpp -DBUF1 -DBUF2 -DBUF3
+
 	avr-size -B --mcu=attiny85 example-simple.avr example-class-*.avr example-static-*.avr
+
+	avr-size -B --mcu=attiny85 example-buffer-*.avr
 
 	@echo Example stats
 	avr-size -C --mcu=attiny85 example.avr

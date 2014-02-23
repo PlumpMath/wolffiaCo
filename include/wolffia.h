@@ -11,8 +11,6 @@
 
 #include "coroutine.h"
 
-#include "wolffia-events.h"
-
 #define __woConcat_(a,b) a##b
 #define __woConcat(a,b) __woConcat2(a,b)
 
@@ -22,5 +20,8 @@
 #else
 # define __WO_ATOMIC_BLOCK(command) command
 #endif
+
+#include "wolffia-events.h"
+#include "wolffia-buffer.h"
 
 #endif

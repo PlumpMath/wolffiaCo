@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2341E87018B1CEED005C29B7 /* maintest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2341E86E18B1CEED005C29B7 /* maintest.cpp */; };
-		2341E87718B25AF7005C29B7 /* example.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2341E87618B25AF7005C29B7 /* example.cpp */; };
 		2341E87818B25AF7005C29B7 /* example.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2341E87618B25AF7005C29B7 /* example.cpp */; };
 		2341E87F18B2F9FC005C29B7 /* fizzbuzz.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2341E87D18B2F9FC005C29B7 /* fizzbuzz.cpp */; };
 		2341E88018B2F9FC005C29B7 /* fizzbuzz.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2341E87D18B2F9FC005C29B7 /* fizzbuzz.cpp */; };
@@ -30,6 +29,11 @@
 		23F62C7918B3BCA000E06AAC /* wolffia.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23F62C6C18B38CDA00E06AAC /* wolffia.cpp */; };
 		23F62C8318B3BD9300E06AAC /* locks.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23F62C6B18B38CDA00E06AAC /* locks.cpp */; };
 		23F9205218B54277000D09F0 /* wolffia-events.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23F9205018B54277000D09F0 /* wolffia-events.cpp */; };
+		23F9205318BA3044000D09F0 /* wolffia-buffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23E3C0C718B527C500E145BC /* wolffia-buffer.cpp */; };
+		23F9205718BA6E18000D09F0 /* example-buffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23F9205418BA6E18000D09F0 /* example-buffer.cpp */; };
+		23F9205918BA6E47000D09F0 /* example-buffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23F9205418BA6E18000D09F0 /* example-buffer.cpp */; };
+		23F9205A18BA6F56000D09F0 /* wolffia-buffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23E3C0C718B527C500E145BC /* wolffia-buffer.cpp */; };
+		23F9205B18BA6F58000D09F0 /* wolffia-buffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23E3C0C718B527C500E145BC /* wolffia-buffer.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -99,6 +103,7 @@
 		23F62C8018B3BD0E00E06AAC /* example-task.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "example-task.cpp"; path = "examples/example-task.cpp"; sourceTree = "<group>"; };
 		23F9205018B54277000D09F0 /* wolffia-events.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "wolffia-events.cpp"; sourceTree = "<group>"; };
 		23F9205118B54277000D09F0 /* wolffia-events.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "wolffia-events.h"; sourceTree = "<group>"; };
+		23F9205418BA6E18000D09F0 /* example-buffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "example-buffer.cpp"; path = "examples/example-buffer.cpp"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +172,7 @@
 				2377EE2C18B000690045026E /* example-class.cpp */,
 				2377EE2D18B000690045026E /* example-simple.cpp */,
 				2377EE2E18B000690045026E /* example-static.cpp */,
+				23F9205418BA6E18000D09F0 /* example-buffer.cpp */,
 			);
 			name = Examples;
 			sourceTree = "<group>";
@@ -311,7 +317,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23F9205718BA6E18000D09F0 /* example-buffer.cpp in Sources */,
 				2341E87818B25AF7005C29B7 /* example.cpp in Sources */,
+				23F9205B18BA6F58000D09F0 /* wolffia-buffer.cpp in Sources */,
 				2377EE3118B000690045026E /* example-class.cpp in Sources */,
 				23F62C6F18B38CDA00E06AAC /* locks.cpp in Sources */,
 				2377EE3518B000690045026E /* example-static.cpp in Sources */,
@@ -326,11 +334,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2341E87718B25AF7005C29B7 /* example.cpp in Sources */,
 				23B9B07318AF9DD9008E2250 /* Makefile in Sources */,
 				23F62C6D18B38CDA00E06AAC /* locks.cpp in Sources */,
 				2341E87F18B2F9FC005C29B7 /* fizzbuzz.cpp in Sources */,
 				23E3C0C918B527C500E145BC /* wolffia-buffer.cpp in Sources */,
+				23F9205918BA6E47000D09F0 /* example-buffer.cpp in Sources */,
 				23F62C7018B38CDA00E06AAC /* wolffia.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -341,6 +349,7 @@
 			files = (
 				23F62C7118B38CDA00E06AAC /* wolffia.cpp in Sources */,
 				23DBDD4218B1CD0E002E8717 /* Makefile in Sources */,
+				23F9205A18BA6F56000D09F0 /* wolffia-buffer.cpp in Sources */,
 				2341E87018B1CEED005C29B7 /* maintest.cpp in Sources */,
 				23F62C6E18B38CDA00E06AAC /* locks.cpp in Sources */,
 			);
@@ -354,6 +363,7 @@
 				238E1C0418B44F160058D493 /* example-task.cpp in Sources */,
 				23F9205218B54277000D09F0 /* wolffia-events.cpp in Sources */,
 				23F62C7618B3BCA000E06AAC /* Makefile in Sources */,
+				23F9205318BA3044000D09F0 /* wolffia-buffer.cpp in Sources */,
 				23F62C7918B3BCA000E06AAC /* wolffia.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
