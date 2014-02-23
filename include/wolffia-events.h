@@ -11,10 +11,6 @@
 
 #include <stdint.h>
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
 #define Eventbuffer_Size 5
 #define Eventbuffer_Mask ((1 << Eventbuffer_Size)-1)
 
@@ -62,10 +58,5 @@ extern event_t event_buffer[Eventbuffer_Mask+1];
 #define handleEvent6(pos, event1, event2, event3, event4, event5, event6) if (getEvent(pos) == event1 || getEvent(pos) == event2 || getEvent(pos) == event3 || getEvent(pos) == event4 || getEvent(pos) == event5 || getEvent(pos) == event6)
 #define handleEvent7(pos, event1, event2, event3, event4, event5, event6, event7) if (getEvent(pos) == event1 || getEvent(pos) == event2 || getEvent(pos) == event3 || getEvent(pos) == event4 || getEvent(pos) == event5 || getEvent(pos) == event6 || getEvent(pos) == event7)
 #define handleEvent8(pos, event1, event2, event3, event4, event5, event6, event7, event8) if (getEvent(pos) == event1 || getEvent(pos) == event2 || getEvent(pos) == event3 || getEvent(pos) == event4 || getEvent(pos) == event5 || getEvent(pos) == event6 || getEvent(pos) == event7 || getEvent(pos) == event8)
-
-#ifdef __cplusplus
-}
-#endif
-
     
 #endif /* defined(__wolffiaCo__wolffia_events__) */
