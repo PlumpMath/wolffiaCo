@@ -16,8 +16,6 @@
 #define __woConcat_(a,b) a##b
 #define __woConcat(a,b) __woConcat2(a,b)
 
-#define WO_Run(priority_marker) __woRun(priority_marker)
-
 #ifdef __AVR__
 # include <avr/interrupt.h>
 # define __WO_ATOMIC_BLOCK(command) cli(); command; sei()

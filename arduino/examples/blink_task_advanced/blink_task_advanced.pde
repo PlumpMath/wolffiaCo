@@ -100,6 +100,6 @@ void setup() {
 
 void loop() {
   
-  WO_Run(EVENT_PRIORITY_MARKER);
+  WO_Start(EVENT_PRIORITY_MARKER);
   
 }

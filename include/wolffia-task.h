@@ -26,14 +26,16 @@ extern "C" {
 
 #define __woFinalTask
 
-#define __woRun(priority_marker)\
-    void *__woJmpPos = &&__wo_start;\
-    uint8_t __woLowEventPos=0, __woHighEventPos=0;\
-    uint8_t event, data;\
+#define WO_Start(priority_marker) do { __woLoop(priority_marker); } while(1)
+    
+#define __woLoop(priority_marker)\
+    static void *__woJmpPos = &&__wo_start;\
+    static uint8_t __woLowEventPos=0, __woHighEventPos=0;\
+    static uint8_t event, data;\
     \
 __wo_start:\
     __woRunBlock;\
-    __woJmpPos = &&__wo_start;\
+    __woJmpPos = &&__wo_end;\
     \
 __wo_check_event:\
     /* Check it there is new high priority events */\
@@ -67,7 +69,8 @@ __wo_check_event:\
             __woListenerBlock;\
     }\
     \
-    goto __wo_check_event;
+    goto __wo_check_event;\
+__wo_end:
 
 
 #include "wolffia-task-gen.h"
