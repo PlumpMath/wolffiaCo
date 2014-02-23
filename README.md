@@ -11,7 +11,7 @@ wolffiaCo name comes from [wolffia](http://en.wikipedia.org/wiki/Wolffia) which 
 
 Based on [ProtoThreads](http://dunkels.com/adam/pt/) by Adam Dunkels and uses [Label as Values](http://gcc.gnu.org/onlinedocs/gcc/Labels-as-Values.html) extension. 
 
-### Installation
+#### Installation
 
 1. Get latests [release](https://github.com/parkerkane/wolffiaCo/raw/master/arduino/wolffiaCo.zip) or bleeding edge [develop release](https://github.com/parkerkane/wolffiaCo/raw/develop/arduino/wolffiaCo.zip)
 2. In Arduino go `Sketch > Import library... > Add library...`
@@ -23,7 +23,7 @@ More information about installing libraries can found from Arduino's [websites](
 Arduino
 -------
 
-Because everybody loves blinking leds, here is few examples how to use this library.
+Even wolffiaCo is not targeted for Arduino it still works nicely with it. And because everybody loves blinking leds, here is few examples how to use this library.
 
 ###### Task example
 
