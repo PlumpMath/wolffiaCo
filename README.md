@@ -118,9 +118,9 @@ void blink() {
 
   static long time = 0;
 
-  time = millis();
-
   while(true) {
+    time = millis();
+
     digitalWrite(led, HIGH);
     yieldUntil(millis() > time+1000);
   
@@ -155,9 +155,9 @@ public:
   void operator()() {
     CORO_Init(Blink);
 
-    time = millis();
-
     while(true) {
+      time = millis();
+
       digitalWrite(led, HIGH);
       yieldUntil(millis() > time+1000);
   
